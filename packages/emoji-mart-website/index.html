@@ -1,0 +1,119 @@
+<extends
+  src="layout.html"
+  locals='{ "exampleName": "Slack colors", "exampleFile": "" }'
+>
+  <block name="script">
+    <script type="module">
+      import data from '@emoji-mart/data'
+      import { Picker } from 'emoji-mart'
+
+      let selectedEmoji = null
+      let selectedEmojiName = 'art'
+      let currentSize = 512 // Default size
+
+      const picker = new Picker({
+        parent: document.querySelector('#picker'),
+        data: data,
+        emojiButtonRadius: '6px',
+        emojiButtonColors: [
+          'rgba(155,223,88,.7)',
+          'rgba(149,211,254,.7)',
+          'rgba(247,233,34,.7)',
+          'rgba(238,166,252,.7)',
+          'rgba(255,213,143,.7)',
+          'rgba(211,209,255,.7)',
+        ],
+        onEmojiSelect: (emoji) => {
+          selectedEmoji = emoji
+          selectedEmojiName = emoji.id || emoji.name || 'emoji'
+          updatePreview(emoji)
+        }
+      })
+
+      function generateEmojiImage(emoji, size) {
+        if (emoji && emoji.native) {
+          const canvas = document.createElement('canvas')
+          const ctx = canvas.getContext('2d')
+          canvas.width = size
+          canvas.height = size
+          
+          // Set high-quality rendering
+          ctx.imageSmoothingEnabled = true
+          ctx.imageSmoothingQuality = 'high'
+          
+          // Use appropriate font size for the canvas size
+          ctx.font = `${size * 0.8}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", Arial`
+          ctx.textAlign = 'center'
+          ctx.textBaseline = 'middle'
+          
+          // Clear canvas with transparent background
+          ctx.clearRect(0, 0, size, size)
+          
+          // Draw emoji
+          ctx.fillText(emoji.native, size / 2, size / 2)
+          
+          return canvas.toDataURL('image/png')
+        }
+        return './assets/art.png'
+      }
+
+      function updatePreview(emoji) {
+        const previewImg = document.getElementById('preview-image')
+        const downloadBtn = document.getElementById('download-btn')
+        const downloadSpan = downloadBtn.querySelector('span')
+        const sizeSelect = document.getElementById('size-select')
+        
+        currentSize = parseInt(sizeSelect.value)
+        
+        // Update preview image (always use 128px for preview display)
+        previewImg.src = generateEmojiImage(emoji, 128)
+        
+        // Update download button text with current size
+        downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
+      }
+
+      // Initialize button text on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        const downloadBtn = document.getElementById('download-btn')
+        const downloadSpan = downloadBtn.querySelector('span')
+        const sizeSelect = document.getElementById('size-select')
+        currentSize = parseInt(sizeSelect.value)
+        downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
+      })
+
+      // Size selector change handler
+      document.getElementById('size-select').addEventListener('change', () => {
+        if (selectedEmoji) {
+          updatePreview(selectedEmoji)
+        } else {
+          // Update button text even when no emoji is selected
+          const downloadBtn = document.getElementById('download-btn')
+          const downloadSpan = downloadBtn.querySelector('span')
+          const sizeSelect = document.getElementById('size-select')
+          currentSize = parseInt(sizeSelect.value)
+          downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
+        }
+      })
+
+      // Download functionality
+      document.getElementById('download-btn').addEventListener('click', () => {
+        const sizeSelect = document.getElementById('size-select')
+        const selectedSize = parseInt(sizeSelect.value)
+        
+        let imageData
+        if (selectedEmoji && selectedEmoji.native) {
+          // Generate image at selected size
+          imageData = generateEmojiImage(selectedEmoji, selectedSize)
+        } else {
+          // Use default image
+          imageData = './assets/art.png'
+        }
+        
+        const link = document.createElement('a')
+        link.download = `${selectedEmojiName}_${selectedSize}x${selectedSize}.png`
+        link.href = imageData
+        link.click()
+      })
+    </script>
+  </block>
+</extends>
