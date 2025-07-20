@@ -1,0 +1,5 @@
+{
+  "buildCommand": "yarn build:website",
+  "outputDirectory": "packages/emoji-mart-website/emoji-mart",
+  "installCommand": "yarn install"
+}
