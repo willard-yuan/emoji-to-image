@@ -32,7 +32,7 @@
           <!-- Download section -->
           <div class="download-section">
             <div class="emoji-preview">
-              <img id="preview-image" src="/art.143a2ddd.png" alt="Emoji preview">
+              <img id="preview-image" src="/labubu_emoji_256x256.74bbecef.png" alt="Emoji preview">
             </div>
             
             <!-- Size selector -->
@@ -657,7 +657,7 @@ function generateEmojiImage(emoji, size) {
         ctx.fillText(emoji.native, size / 2, size / 2);
         return canvas.toDataURL("image/png");
     }
-    return "./assets/art.png";
+    return "./assets/labubu_emoji_256x256.png";
 }
 function updatePreview(emoji) {
     const previewImg = document.getElementById("preview-image");
@@ -698,7 +698,7 @@ document.getElementById("download-btn").addEventListener("click", ()=>{
     if (selectedEmoji && selectedEmoji.native) // Generate image at selected size
     imageData = generateEmojiImage(selectedEmoji, selectedSize);
     else // Use default image
-    imageData = "./assets/art.png";
+    imageData = "./assets/labubu_emoji_256x256.png";
     const link = document.createElement("a");
     link.download = `${selectedEmojiName}_${selectedSize}x${selectedSize}.png`;
     link.href = imageData;
