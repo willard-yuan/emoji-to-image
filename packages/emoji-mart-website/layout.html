@@ -93,46 +93,11 @@
           </nav>
 
           <div class="flex flex-center">
-            <div id="missive" class="flex flex-middle">
-              <div id="coin-box">
-                <img
-                  src="./assets/missive.png"
-                  width="34"
-                  height="34"
-                  draggable="false"
-                />
-              </div>
+            <div class="flex flex-middle">
               <p>
                 Brought to you by the
-                <a
-                  href="https://missiveapp.com"
-                  title="Team Email, Chat & Tasks"
-                  ><em-emoji id="mailbox_with_mail"></em-emoji> Missive</a
-                >
-                team
+                <em-emoji id="art"></em-emoji> emojiimage team
               </p>
-              <audio id="coin-audio" src="./assets/coin.mp3"></audio>
-              <script type="module">
-                const coinBox = document.querySelector('#coin-box')
-                const coinAudio = document.querySelector('#coin-audio')
-
-                coinBox.addEventListener('mousedown', () => {
-                  const coin = document.createElement('span')
-                  coin.className = 'coin-wrap'
-                  coin.innerHTML = '<span class="coin"></span>'
-
-                  coinBox.appendChild(coin)
-
-                  const audio = new Audio(coinAudio.src)
-                  audio.currentTime = 0.25
-                  audio.volume = 0.33
-                  audio.play()
-
-                  coin.addEventListener('animationend', () => {
-                    coinBox.removeChild(coin)
-                  })
-                })
-              </script>
             </div>
           </div>
         </footer>
