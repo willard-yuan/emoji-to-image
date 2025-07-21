@@ -7,13 +7,131 @@
       import data from '@emoji-mart/data'
       import { Picker } from 'emoji-mart'
 
+      import labubu1 from './assets/labubu_emoji_1.png'
+      import labubu2 from './assets/labubu_emoji_2.png'
+      import labubu3 from './assets/labubu_emoji_3.png'
+      import labubu4 from './assets/labubu_emoji_4.png'
+      import labubu5 from './assets/labubu_emoji_5.png'
+      import labubu6 from './assets/labubu_emoji_6.png'
+      import labubu7 from './assets/labubu_emoji_7.png'
+      import labubu8 from './assets/labubu_emoji_8.png'
+      import labubu9 from './assets/labubu_emoji_9.png'
+      import labubu10 from './assets/labubu_emoji_10.png'
+      import labubu11 from './assets/labubu_emoji_11.png'
+
+      // Import all image assets to ensure they are processed by Parcel
+      import labubu1_64 from './assets/labubu_emoji_1_64x64.png'
+      import labubu1_128 from './assets/labubu_emoji_1_128x128.png'
+      import labubu1_256 from './assets/labubu_emoji_1_256x256.png'
+      import labubu1_512 from './assets/labubu_emoji_1_512x512.png'
+      import labubu2_64 from './assets/labubu_emoji_2_64x64.png'
+      import labubu2_128 from './assets/labubu_emoji_2_128x128.png'
+      import labubu2_256 from './assets/labubu_emoji_2_256x256.png'
+      import labubu2_512 from './assets/labubu_emoji_2_512x512.png'
+
       let selectedEmoji = null
       let selectedEmojiName = 'art'
       let currentSize = 512 // Default size
+      
+      // 创建自定义分类和表情符号
+      const custom = [
+        {
+          id: 'labubu_category',
+          name: 'Labubu',
+          emojis: [
 
+            {
+              id: 'labubu1',
+              name: 'Labubu 1',
+              keywords: ['labubu', 'cute', 'character'],
+              skins: [{
+                src: labubu1,
+                downloads: {
+                  '64': labubu1_64,
+                  '128': labubu1_128,
+                  '256': labubu1_256,
+                  '512': labubu1_512,
+                },
+              }],
+            },
+            {
+              id: 'labubu2',
+              name: 'Labubu 2',
+              keywords: ['labubu', 'cute', 'character'],
+              skins: [{
+                src: labubu2,
+                downloads: {
+                  '64': labubu2_64,
+                  '128': labubu2_128,
+                  '256': labubu2_256,
+                  '512': labubu2_512,
+                },
+              }],
+            },
+            // {
+            //   id: 'labubu3',
+            //   name: 'Labubu 3',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu3 }]
+            // },
+            // {
+            //   id: 'labubu4',
+            //   name: 'Labubu 4',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu4 }]
+            // },
+            // {
+            //   id: 'labubu5',
+            //   name: 'Labubu 5',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu5 }]
+            // },
+            // {
+            //   id: 'labubu6',
+            //   name: 'Labubu 6',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu6 }]
+            // },
+            // {
+            //   id: 'labubu7',
+            //   name: 'Labubu 7',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu7 }]
+            // },
+            // {
+            //   id: 'labubu8',
+            //   name: 'Labubu 8',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu8 }]
+            // },
+            // {
+            //   id: 'labubu9',
+            //   name: 'Labubu 9',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu9 }]
+            // },
+            // {
+            //   id: 'labubu10',
+            //   name: 'Labubu 10',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu10 }]
+            // },
+            // {
+            //   id: 'labubu11',
+            //   name: 'Labubu 11',
+            //   keywords: ['labubu', 'cute', 'character'],
+            //   skins: [{ src: labubu11 }]
+            // }
+            // // 移除了 shipit 表情对象
+          ]
+        }
+      ]
+      
       const picker = new Picker({
         parent: document.querySelector('#picker'),
         data: data,
+        custom: custom,
+        categories: ['labubu_category', 'frequent', 'people', 'nature', 'foods', 'activity', 'places', 'objects', 'symbols', 'flags'],
         emojiButtonRadius: '6px',
         emojiButtonColors: [
           'rgba(155,223,88,.7)',
@@ -23,14 +141,42 @@
           'rgba(255,213,143,.7)',
           'rgba(211,209,255,.7)',
         ],
-        onEmojiSelect: (emoji) => {
-          selectedEmoji = emoji
-          selectedEmojiName = emoji.id || emoji.name || 'emoji'
-          updatePreview(emoji)
-        }
+        onEmojiSelect: onEmojiSelect,
       })
 
       function generateEmojiImage(emoji, size) {
+        // 处理自定义表情符号
+        if (emoji && emoji.skins && emoji.skins[0] && emoji.skins[0].src) {
+          // 创建一个临时图像元素来加载自定义表情符号
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              const canvas = document.createElement('canvas');
+              const ctx = canvas.getContext('2d');
+              canvas.width = size;
+              canvas.height = size;
+              
+              // 设置高质量渲染
+              ctx.imageSmoothingEnabled = true;
+              ctx.imageSmoothingQuality = 'high';
+              
+              // 清除画布，设置透明背景
+              ctx.clearRect(0, 0, size, size);
+              
+              // 绘制表情符号图像
+              ctx.drawImage(img, 0, 0, size, size);
+              
+              resolve(canvas.toDataURL('image/png'));
+            };
+            img.onerror = () => {
+              // 如果图像加载失败，则返回默认图像
+              resolve('./assets/labubu_emoji_256x256.png');
+            };
+            img.src = emoji.skins[0].src;
+          });
+        }
+        
+        // 处理标准表情符号
         if (emoji && emoji.native) {
           const canvas = document.createElement('canvas')
           const ctx = canvas.getContext('2d')
@@ -57,62 +203,128 @@
         return './assets/labubu_emoji_256x256.png'
       }
 
-      function updatePreview(emoji) {
+      function onEmojiSelect(emoji) {
+        const downloadBtn = document.getElementById('download-btn')
+
+        if (emoji) {
+          // Find the full emoji object from our custom list, as emoji-mart strips extra properties.
+          let fullEmojiObject = null
+          for (const category of custom) {
+            const found = category.emojis.find(
+              (customEmoji) => customEmoji.id === emoji.id,
+            )
+            if (found) {
+              fullEmojiObject = found
+              break
+            }
+          }
+
+          // If it's a custom emoji, use our full object which includes the 'downloads' property.
+          // Otherwise, use the object from emoji-mart (for standard emojis).
+          selectedEmoji = fullEmojiObject || emoji
+
+          selectedEmojiName = (emoji.id || emoji.name || 'emoji').replace(/ /g, '_')
+          downloadBtn.disabled = false
+        } else {
+          selectedEmoji = null
+          selectedEmojiName = ''
+          downloadBtn.disabled = true
+        }
+        updatePreview()
+      }
+
+      function updatePreview() {
         const previewImg = document.getElementById('preview-image')
         const downloadBtn = document.getElementById('download-btn')
         const downloadSpan = downloadBtn.querySelector('span')
         const sizeSelect = document.getElementById('size-select')
-        
+
         currentSize = parseInt(sizeSelect.value)
-        
-        // Update preview image (always use 128px for preview display)
-        previewImg.src = generateEmojiImage(emoji, 128)
-        
-        // Update download button text with current size
-        downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
+
+        if (selectedEmoji) {
+          previewImg.style.width = `${currentSize}px`
+          previewImg.style.height = `${currentSize}px`
+
+          if (selectedEmoji.skins && selectedEmoji.skins[0] && selectedEmoji.skins[0].src) {
+            previewImg.src = selectedEmoji.skins[0].src
+          } else {
+            const imageResult = generateEmojiImage(selectedEmoji, currentSize)
+            if (imageResult instanceof Promise) {
+              imageResult.then((imageData) => {
+                previewImg.src = imageData
+              }).catch(() => {
+                previewImg.src = './assets/labubu_emoji_256x256.png'
+              })
+            } else {
+              previewImg.src = imageResult
+            }
+          }
+          downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
+          downloadBtn.disabled = false
+        } else {
+          previewImg.src = ''
+          previewImg.alt = 'Select an emoji to preview'
+          previewImg.style.width = 'auto'
+          previewImg.style.height = 'auto'
+          downloadSpan.textContent = 'Download'
+          downloadBtn.disabled = true
+        }
       }
 
       // Initialize button text on page load
       document.addEventListener('DOMContentLoaded', () => {
+        const previewImg = document.getElementById('preview-image')
         const downloadBtn = document.getElementById('download-btn')
         const downloadSpan = downloadBtn.querySelector('span')
         const sizeSelect = document.getElementById('size-select')
         currentSize = parseInt(sizeSelect.value)
-        downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
+        previewImg.alt = 'Select an emoji to preview'
+        selectedEmojiName = ''
+        if (selectedEmojiName) {
+          downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
+          downloadBtn.disabled = false
+        } else {
+          downloadSpan.textContent = 'Download'
+          downloadBtn.disabled = true
+        }
       })
 
       // Size selector change handler
-      document.getElementById('size-select').addEventListener('change', () => {
-        if (selectedEmoji) {
-          updatePreview(selectedEmoji)
-        } else {
-          // Update button text even when no emoji is selected
-          const downloadBtn = document.getElementById('download-btn')
-          const downloadSpan = downloadBtn.querySelector('span')
-          const sizeSelect = document.getElementById('size-select')
-          currentSize = parseInt(sizeSelect.value)
-          downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
-        }
-      })
+      document.getElementById('size-select').addEventListener('change', updatePreview)
 
       // Download functionality
       document.getElementById('download-btn').addEventListener('click', () => {
         const sizeSelect = document.getElementById('size-select')
         const selectedSize = parseInt(sizeSelect.value)
-        
-        let imageData
-        if (selectedEmoji && selectedEmoji.native) {
-          // Generate image at selected size
-          imageData = generateEmojiImage(selectedEmoji, selectedSize)
+
+        const processDownload = (imageData) => {
+          const link = document.createElement('a')
+          link.download = `${selectedEmojiName}_${selectedSize}x${selectedSize}.png`
+          link.href = imageData
+          link.click()
+        }
+
+        if (selectedEmoji) {
+          if (
+            selectedEmoji.skins &&
+            selectedEmoji.skins[0] &&
+            selectedEmoji.skins[0].downloads &&
+            selectedEmoji.skins[0].downloads[selectedSize]
+          ) {
+            processDownload(selectedEmoji.skins[0].downloads[selectedSize])
+          } else {
+            // Fallback for other emojis or sizes not specified
+            const imageResult = generateEmojiImage(selectedEmoji, selectedSize)
+            if (imageResult instanceof Promise) {
+              imageResult.then(processDownload)
+            } else {
+              processDownload(imageResult)
+            }
+          }
         } else {
           // Use default image
-          imageData = './assets/labubu_emoji_256x256.png'
+          processDownload('./assets/labubu_emoji_256x256.png')
         }
-        
-        const link = document.createElement('a')
-        link.download = `${selectedEmojiName}_${selectedSize}x${selectedSize}.png`
-        link.href = imageData
-        link.click()
       })
     </script>
   </block>
