@@ -203,8 +203,11 @@ header {
   // border: 2px solid #e2e8f0;
   
   img {
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 256px;
+    max-height: 256px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   }
 }
