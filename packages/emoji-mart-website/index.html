@@ -317,7 +317,9 @@
           previewImg.style.width = `${currentSize}px`
           previewImg.style.height = `${currentSize}px`
 
-          if (selectedEmoji.skins && selectedEmoji.skins[0] && selectedEmoji.skins[0].src) {
+          if (selectedEmoji.skins && selectedEmoji.skins[0] && selectedEmoji.skins[0].downloads && selectedEmoji.skins[0].downloads[currentSize]) {
+            previewImg.src = selectedEmoji.skins[0].downloads[currentSize];
+          } else if (selectedEmoji.skins && selectedEmoji.skins[0] && selectedEmoji.skins[0].src) {
             previewImg.src = selectedEmoji.skins[0].src
           } else {
             const imageResult = generateEmojiImage(selectedEmoji, currentSize)
@@ -350,8 +352,15 @@
         const downloadSpan = downloadBtn.querySelector('span')
         const sizeSelect = document.getElementById('size-select')
         currentSize = parseInt(sizeSelect.value)
+
+        // Set the initial emoji to Labubu 1
+        selectedEmoji = custom[0].emojis[0];
+        selectedEmojiName = selectedEmoji.id;
+
+        // Update the preview to show the default emoji with the correct size
+        updatePreview();
+
         previewImg.alt = 'Select an emoji to preview'
-        selectedEmojiName = ''
         if (selectedEmojiName) {
           downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
           downloadBtn.disabled = false

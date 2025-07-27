@@ -152,7 +152,7 @@ header p {
 .download-section {
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1rem;
   padding: 3rem;
   display: flex;
 }
@@ -169,6 +169,9 @@ header p {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 2rem;
+  padding: .5rem;
   display: flex;
 }
 
@@ -204,17 +207,18 @@ header p {
 }
 
 .emoji-preview {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
   display: flex;
 }
 
 .emoji-preview img {
-  max-width: 256px;
-  max-height: 256px;
+  max-width: 200px;
+  max-height: 200px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -233,22 +237,22 @@ header p {
 
 .download-button {
   color: #fff;
-  background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 100%);
   cursor: pointer;
   transition: all var(--duration) var(--easing);
   text-transform: none;
-  letter-spacing: .5px;
+  letter-spacing: .3px;
+  background: #6772e5;
   border: none;
-  border-radius: 16px;
+  border-radius: 12px;
   align-items: center;
-  gap: .75rem;
-  padding: 1.2rem 2.5rem;
-  font-size: 1rem;
+  gap: .5rem;
+  padding: .8rem 1.5rem;
+  font-size: .9rem;
   font-weight: 600;
   display: flex;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 25px #4f46e54d;
+  box-shadow: 0 6px 20px #4f46e54d;
 }
 
 .download-button:before {
@@ -263,7 +267,7 @@ header p {
 }
 
 .download-button:hover {
-  background: linear-gradient(135deg, var(--primary-hover) 0%, #4c1d95 100%);
+  background: #8d96fb;
   transform: translateY(-3px);
   box-shadow: 0 12px 35px #4f46e566;
 }
@@ -278,13 +282,15 @@ header p {
 
 .download-button span {
   z-index: 2;
-  font-size: 1rem;
+  font-size: .875rem;
   position: relative;
 }
 
-.download-button em-emoji {
+.download-button svg {
+  width: 18px;
+  height: 18px;
   z-index: 2;
-  font-size: 1.1rem;
+  flex-shrink: 0;
   position: relative;
 }
 
@@ -328,6 +334,7 @@ header p {
   }
 
   .download-section {
+    gap: 1.5rem;
     padding: 2rem 1.5rem;
   }
 
@@ -337,12 +344,19 @@ header p {
   }
 
   .emoji-preview {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+  }
+
+  .emoji-preview img {
+    max-width: 150px;
+    max-height: 150px;
   }
 
   .size-selector {
     gap: .8rem;
+    margin-bottom: 1.5rem;
   }
 
   .size-selector label {
@@ -356,12 +370,13 @@ header p {
   }
 
   .download-button {
-    padding: .875rem 1.5rem;
-    font-size: 1rem;
+    margin-top: .5rem;
+    padding: .7rem 1.2rem;
+    font-size: .9rem;
   }
 
   .download-button span {
-    font-size: 1rem;
+    font-size: .8rem;
   }
 }
 
@@ -374,11 +389,18 @@ header p {
     font-size: clamp(1.75rem, 10vw, 2.5rem);
   }
 
+  header h1 img {
+    max-width: 64px;
+    width: auto;
+    height: auto;
+  }
+
   header p {
     font-size: 1rem;
   }
 
   .download-section {
+    gap: 1rem;
     padding: 1.5rem 1rem;
   }
 
@@ -388,15 +410,24 @@ header p {
   }
 
   .emoji-preview {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 1rem;
+  }
+
+  .emoji-preview img {
+    max-width: 130px;
+    max-height: 130px;
   }
 
   .size-selector {
+    flex-direction: column;
     gap: .6rem;
+    margin-bottom: 1rem;
   }
 
   .size-selector label {
+    margin-bottom: .3rem;
     font-size: 13px;
   }
 
@@ -405,11 +436,27 @@ header p {
     padding: 6px 10px;
     font-size: 13px;
   }
+
+  .download-button {
+    margin-top: .5rem;
+  }
 }
 
 h1 {
-  font-family: Courier New, Courier, monospace;
+  background: linear-gradient(135deg, #8d96fb, #6772e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #8d96fb;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: System, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
   font-size: 30px;
+}
+
+h1 img {
+  max-width: 64px;
+  width: auto;
+  height: auto;
 }
 
 h1, h2 {
@@ -560,6 +607,12 @@ footer {
 
 footer nav {
   margin: 1em 0 2em;
+}
+
+footer img {
+  max-width: 32px;
+  width: auto;
+  height: auto;
 }
 
 #missive {

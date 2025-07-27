@@ -1,0 +1,99 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 调色板主体 -->
+  <ellipse cx="32" cy="35" rx="28" ry="22" fill="#F8F9FA" stroke="#2D3748" stroke-width="2"></ellipse>
+  
+  <!-- 颜料孔 -->
+  <!-- 红色 -->
+  <circle cx="20" cy="25" r="4" fill="#FF4757"></circle>
+  <circle cx="20" cy="25" r="4" fill="url('#redGradient')"></circle>
+  
+  <!-- 橙色 -->
+  <circle cx="32" cy="20" r="4" fill="#FF6B35"></circle>
+  <circle cx="32" cy="20" r="4" fill="url('#orangeGradient')"></circle>
+  
+  <!-- 黄色 -->
+  <circle cx="44" cy="25" r="4" fill="#FFD93D"></circle>
+  <circle cx="44" cy="25" r="4" fill="url('#yellowGradient')"></circle>
+  
+  <!-- 绿色 -->
+  <circle cx="48" cy="38" r="4" fill="#6BCF7F"></circle>
+  <circle cx="48" cy="38" r="4" fill="url('#greenGradient')"></circle>
+  
+  <!-- 蓝色 -->
+  <circle cx="40" cy="48" r="4" fill="#4DABF7"></circle>
+  <circle cx="40" cy="48" r="4" fill="url('#blueGradient')"></circle>
+  
+  <!-- 紫色 -->
+  <circle cx="24" cy="48" r="4" fill="#9775FA"></circle>
+  <circle cx="24" cy="48" r="4" fill="url('#purpleGradient')"></circle>
+  
+  <!-- 粉色 -->
+  <circle cx="16" cy="38" r="4" fill="#FF8CC8"></circle>
+  <circle cx="16" cy="38" r="4" fill="url('#pinkGradient')"></circle>
+  
+  <!-- 拇指孔 -->
+  <ellipse cx="32" cy="42" rx="6" ry="4" fill="#FFFFFF" stroke="#2D3748" stroke-width="2"></ellipse>
+  
+  <!-- 画笔 -->
+  <g transform="translate(45, 15) rotate(45)">
+    <!-- 笔杆 -->
+    <rect x="0" y="0" width="3" height="20" fill="#8B4513" rx="1.5"></rect>
+    <rect x="0" y="0" width="3" height="20" fill="url('#brushGradient')" rx="1.5"></rect>
+    
+    <!-- 金属环 -->
+    <rect x="0" y="16" width="3" height="2" fill="#C0C0C0"></rect>
+    
+    <!-- 笔毛 -->
+    <path d="M0.5 18 L1.5 25 L2.5 18 Z" fill="#2D3748"></path>
+    
+    <!-- 笔尖颜料 -->
+    <circle cx="1.5" cy="24" r="1" fill="#FF4757"></circle>
+  </g>
+  
+  <!-- 渐变定义 -->
+  <defs>
+    <radialGradient id="redGradient" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#FF6B7A"></stop>
+      <stop offset="100%" stop-color="#FF4757"></stop>
+    </radialGradient>
+    
+    <radialGradient id="orangeGradient" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#FF8A50"></stop>
+      <stop offset="100%" stop-color="#FF6B35"></stop>
+    </radialGradient>
+    
+    <radialGradient id="yellowGradient" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#FFE066"></stop>
+      <stop offset="100%" stop-color="#FFD93D"></stop>
+    </radialGradient>
+    
+    <radialGradient id="greenGradient" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#7ED99B"></stop>
+      <stop offset="100%" stop-color="#6BCF7F"></stop>
+    </radialGradient>
+    
+    <radialGradient id="blueGradient" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#74C0FC"></stop>
+      <stop offset="100%" stop-color="#4DABF7"></stop>
+    </radialGradient>
+    
+    <radialGradient id="purpleGradient" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#B197FC"></stop>
+      <stop offset="100%" stop-color="#9775FA"></stop>
+    </radialGradient>
+    
+    <radialGradient id="pinkGradient" cx="0.3" cy="0.3">
+      <stop offset="0%" stop-color="#FFB3D1"></stop>
+      <stop offset="100%" stop-color="#FF8CC8"></stop>
+    </radialGradient>
+    
+    <linearGradient id="brushGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A0522D"></stop>
+      <stop offset="50%" stop-color="#8B4513"></stop>
+      <stop offset="100%" stop-color="#654321"></stop>
+    </linearGradient>
+  </defs>
+  
+  <!-- 高光效果 -->
+  <ellipse cx="28" cy="30" rx="3" ry="2" fill="#FFFFFF" opacity="0.3"></ellipse>
+</svg>

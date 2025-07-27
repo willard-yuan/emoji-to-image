@@ -142,7 +142,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1rem; /* 减小默认间距，由各元素自己控制具体间距 */
   padding: 3rem;
 }
 
@@ -159,6 +159,9 @@ header {
   align-items: center;
   gap: 1rem;
   justify-content: center;
+  margin-top: 0.5rem; /* 增加顶部间距 */
+  margin-bottom: 2rem; /* 增加底部间距，与下载按钮分开 */
+  padding: 0.5rem; /* 添加内边距 */
   
   label {
     font-size: 15px;
@@ -193,18 +196,19 @@ header {
 }
 
 .emoji-preview {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+  margin-bottom: 2rem; /* 增加底部间距，与 size-selector 分开 */
   // background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   // border: 2px solid #e2e8f0;
   
   img {
-    max-width: 256px;
-    max-height: 256px;
+    max-width: 200px;
+    max-height: 200px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -220,21 +224,21 @@ header {
 .download-button {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1.2rem 2.5rem;
-  font-size: 1rem;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, var(--primary) 0%, #5b21b6 100%);
+  background: #6772e5;
   border: none;
-  border-radius: 16px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all var(--duration) var(--easing);
-  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
   position: relative;
   overflow: hidden;
   text-transform: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   
   &::before {
     content: '';
@@ -248,7 +252,7 @@ header {
   }
   
   &:hover {
-    background: linear-gradient(135deg, var(--primary-hover) 0%, #4c1d95 100%);
+    background: #8d96fb;
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(79, 70, 229, 0.4);
     
@@ -262,15 +266,17 @@ header {
   }
   
   span {
-    font-size: 1rem;
+    font-size: 0.875rem;
     position: relative;
     z-index: 2;
   }
   
-  em-emoji {
-    font-size: 1.1rem;
+  svg {
+    width: 18px;
+    height: 18px;
     position: relative;
     z-index: 2;
+    flex-shrink: 0;
   }
 }
 
@@ -316,6 +322,7 @@ header {
   
   .download-section {
     padding: 2rem 1.5rem;
+    gap: 1.5rem; /* 调整移动设备上的间距 */
   }
   
   .picker-section {
@@ -324,12 +331,19 @@ header {
   }
   
   .emoji-preview {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem; /* 调整移动设备上的间距 */
+    
+    img {
+      max-width: 150px;
+      max-height: 150px;
+    }
   }
   
   .size-selector {
     gap: 0.8rem;
+    margin-bottom: 1.5rem; /* 调整移动设备上的间距 */
     
     label {
       font-size: 14px;
@@ -343,11 +357,12 @@ header {
   }
   
   .download-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem; /* 增加顶部间距 */
     
     span {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 }
@@ -358,6 +373,12 @@ header {
     
     h1 {
       font-size: clamp(1.75rem, 10vw, 2.5rem);
+      
+      img {
+        max-width: 64px;
+        width: auto;
+        height: auto;
+      }
     }
     
     p {
@@ -367,6 +388,7 @@ header {
   
   .download-section {
     padding: 1.5rem 1rem;
+    gap: 1rem; /* 进一步减小小屏幕上的间距 */
   }
   
   .picker-section {
@@ -375,15 +397,24 @@ header {
   }
   
   .emoji-preview {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 1rem; /* 调整小屏幕上的间距 */
+    
+    img {
+      max-width: 130px;
+      max-height: 130px;
+    }
   }
   
   .size-selector {
     gap: 0.6rem;
+    margin-bottom: 1rem; /* 调整小屏幕上的间距 */
+    flex-direction: column; /* 在小屏幕上改为垂直排列 */
     
     label {
       font-size: 13px;
+      margin-bottom: 0.3rem; /* 标签下方添加间距 */
     }
     
     .size-select {
@@ -392,11 +423,26 @@ header {
       min-width: 90px;
     }
   }
+  
+  .download-button {
+    margin-top: 0.5rem; /* 确保按钮与上方元素有足够间距 */
+  }
 }
 
 h1 {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'System', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 30px;
+  background: linear-gradient(135deg, #8d96fb, #6772e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #8d96fb; /* 兼容不支持渐变的浏览器 */
+  
+  img {
+    max-width: 64px;
+    width: auto;
+    height: auto;
+  }
 }
 
 h1, h2 {
@@ -515,6 +561,12 @@ footer {
   text-align: center;
 
   nav { margin: 1em 0 2em }
+  
+  img {
+    max-width: 32px;
+    width: auto;
+    height: auto;
+  }
 }
 
 #missive {

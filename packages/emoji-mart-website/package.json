@@ -7,7 +7,10 @@
     "build": "parcel build index.html --no-autoinstall --public-url ./ --dist-dir emoji-mart"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "posthtml-extend": "0.6.2",
-    "posthtml-include": "1.7.2"
+    "posthtml-include": "1.7.2",
+    "tailwindcss": "^3.4.17"
   }
 }
