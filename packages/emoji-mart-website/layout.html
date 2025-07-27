@@ -1,41 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Emoji to Image</title>
+    <title>Search or Choose an emoji and then download it as an image | EmojiToImage.com</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="twitter:image" content="./assets/EmojiMart-Social.png" />
-    <meta name="twitter:site_name" content="EmojiMart by Missive" />
-    <meta name="twitter:site" content="@missiveapp" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="EmojiMart by Missive" />
-    <meta name="twitter:description" content="One component to pick them all" />
-    <meta property="og:image" content="./assets/EmojiMart-Social.png" />
-    <meta property="og:site_name" content="EmojiMart by Missive" />
-    <meta property="og:description" content="One component to pick them all" />
+    <meta name="description" content="Search or choose an emoji and then download it as an image. Free emoji to PNG converter with multiple sizes (64x64, 128x128, 256x256, 512x512). Perfect for projects, presentations, and social media." />
+    <meta name="keywords" content="emoji, image, download, png, free, open source, emoji to image, emojitoimage" />
+    <meta name="author" content="emojitoimage.com" />
+    <link rel="canonical" href="https://emojitoimage.com" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏪</text></svg>"
-    />
+    <meta property="og:url" content="https://emojitoimage.com/" />
+    <meta property="og:title" content="Search or Choose an emoji and then download it as an image" />
+    <meta property="og:description" content="Free emoji to PNG converter with multiple sizes. Search or choose an emoji and download it as an image instantly." />
+    <meta property="og:image" content="./assets/EmojiMart-Social.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://emojitoimage.com/" />
+    <meta property="twitter:title" content="Search or Choose an emoji and then download it as an image" />
+    <meta property="twitter:description" content="Free emoji to PNG converter with multiple sizes. Search or choose an emoji and download it as an image instantly." />
+    <meta property="twitter:image" content="./assets/EmojiMart-Social.png" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://emojitoimage.com/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "EmojiToImage",
+      "url": "https://emojitoimage.com",
+      "description": "Search or choose an emoji and then download it as an image. Free emoji to PNG converter with multiple sizes.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "EmojiToImage",
+        "url": "https://emojitoimage.com"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="./styles.scss" />
   </head>
   <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="/" class="brand-link">
+            <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" />
+            <span class="brand-text">emojitoimage.com</span>
+          </a>
+        </div>
+        <div class="nav-menu">
+          <a href="/" class="nav-link active">Emoji to Image</a>
+          <!-- <a href="copy-and-paste.html" class="nav-link">Emoji to Copy</a> -->
+        </div>
+      </div>
+    </nav>
+    
     <section class="flex flex-center">
       <div>
         <header>
           <h1>
-            <img src="./assets/palette.svg" alt="Palette" style="vertical-align: middle; margin-right: 0.5em;" />
+            <img src="./assets/palette.svg" alt="Emoji to Image Logo" style="vertical-align: middle; margin-right: 0.5em;" />
             Emoji to Image
           </h1>
-          <p>Search or Choose an emoji and then download it as an image</p>
+          <p>Choose or Search an emoji and then download it as an image</p>
         </header>
 
         <div class="main-content">
           <!-- Download section -->
           <div class="download-section">
             <div class="emoji-preview">
-              <img id="preview-image" src="./assets/labubu_emoji_1_256x256.png" alt="Emoji preview" />
+              <img id="preview-image" src="./assets/labubu_emoji_1_256x256.png" alt="Selected emoji preview" />
             </div>
             
             <!-- Size selector -->
@@ -95,7 +147,7 @@
             <div class="flex flex-middle">
               <p>
                 Brought to you by the
-                <img src="./assets/palette.svg" alt="Palette" style="vertical-align: middle; margin: 0 0.25em;" /> emojiimage team
+                <a href="https://emojitoimage.com" style="text-decoration: none; color: inherit;"><img src="./assets/palette.svg" alt="Emoji to Image Logo" style="vertical-align: middle; margin: 0 0.25em;" /> emojitoimage.com team</a>
               </p>
             </div>
           </div>

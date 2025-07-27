@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "parcel index.html --no-autoinstall",
-    "build": "parcel build index.html --no-autoinstall --public-url ./ --dist-dir emoji-mart"
+    "build": "parcel build index.html --no-autoinstall --public-url ./ --dist-dir emoji-mart && cp robots.txt sitemap.xml emoji-mart/"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

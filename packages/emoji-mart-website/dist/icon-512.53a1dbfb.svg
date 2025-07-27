@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#4F46E5"></rect>
+  <text x="256" y="340" font-family="Arial, sans-serif" font-size="200" text-anchor="middle" fill="white">🖼️</text>
+  <text x="256" y="420" font-family="Arial, sans-serif" font-size="36" text-anchor="middle" fill="white" opacity="0.8">Emoji to Image</text>
+</svg>
