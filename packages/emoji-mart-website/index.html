@@ -2,7 +2,102 @@
   src="layout.html"
   locals='{ "exampleName": "Slack colors", "exampleFile": "" }'
 >
+  <block name="content">
+    <div id="picker" class="flex flex-center"></div>
+  </block>
+  
+  <block name="header_after">
+    <!-- Search container -->
+    <div class="search-container">
+      <div class="search-wrapper">
+        <input type="text" id="emoji-search" placeholder="Search emojis..." />
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="hot-search">
+      <span>hot🔥: </span>
+      <a href="?=labubu" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">labubu</a>
+      <a href="?=smile" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">smile</a>
+      <a href="?=food" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">food</a>
+    </div>
+  </block>
+
   <block name="script">
+    <style>
+      /* 搜索框样式 */
+      .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem auto 1.5rem;
+        padding: 0 2rem;
+        max-width: 600px;
+      }
+      
+      .search-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .search-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        color: #6b7280;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .search-container input {
+        width: 100%;
+        padding: 14px 20px 14px 48px;
+        border: 2px solid #e5e7eb;
+        border-radius: 16px;
+        font-size: 16px;
+        background-color: #ffffff;
+        color: var(--color);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      
+      .search-container input:focus {
+        outline: none;
+        border-color: #6772e5;
+        box-shadow: 0 0 0 4px rgba(103, 114, 229, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transform: translateY(-1px);
+      }
+      
+      .search-container input:focus + .search-icon {
+        color: #6772e5;
+      }
+      
+      .search-container input::placeholder {
+        color: #9ca3af;
+        font-weight: 400;
+      }
+      
+      .search-container input:hover {
+        border-color: #d1d5db;
+        box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+      }
+      
+      /* 隐藏emoji-mart内置的搜索框 */
+      em-emoji-picker .emoji-mart-search {
+        display: none !important;
+      }
+      
+      em-emoji-picker .emoji-mart-search-icon {
+        display: none !important;
+      }
+    </style>
     <script type="module">
       import data from '@emoji-mart/data'
       import { Picker } from 'emoji-mart'
@@ -330,8 +425,25 @@
         const downloadBtn = document.getElementById('download-btn')
         const downloadSpan = downloadBtn.querySelector('span')
         const sizeSelect = document.getElementById('size-select')
+        const searchInput = document.getElementById('emoji-search')
         currentSize = parseInt(sizeSelect.value)
 
+        // 检查 URL 中是否有搜索参数
+        const searchString = window.location.search
+        let searchQuery = ''
+        
+        // 处理 ?=关键词 格式的 URL
+        if (searchString.startsWith('?=')) {
+          searchQuery = decodeURIComponent(searchString.substring(2))
+          
+          if (searchQuery) {
+            // 设置搜索框的值
+            searchInput.value = searchQuery
+            // 触发搜索并自动选择第一个 emoji
+            triggerSearch(searchQuery)
+          }
+        }
+        
         // Set the initial emoji to Labubu 1
         selectedEmoji = custom[0].emojis[0];
         selectedEmojiName = selectedEmoji.id;
@@ -384,6 +496,79 @@
         } else {
           // Use default image
           processDownload('./assets/labubu_emoji_256x256.png')
+        }
+      })
+
+      // 搜索功能
+      const searchInput = document.getElementById('emoji-search')
+      
+      // 模拟emoji-mart内部搜索输入并获取第一个搜索结果作为预览
+      const triggerSearch = (searchTerm) => {
+        const pickerElement = document.querySelector('em-emoji-picker')
+        if (pickerElement && pickerElement.shadowRoot) {
+          const internalSearchInput = pickerElement.shadowRoot.querySelector('input[type="search"]')
+          if (internalSearchInput) {
+            internalSearchInput.value = searchTerm
+            // 触发input事件
+            const inputEvent = new Event('input', { bubbles: true })
+            internalSearchInput.dispatchEvent(inputEvent)
+            
+            // 添加延时以确保搜索结果已更新
+            setTimeout(() => {
+              // 获取搜索结果中的第一个emoji
+              const firstEmojiButton = pickerElement.shadowRoot.querySelector('.emoji-mart-emoji')
+              if (firstEmojiButton && searchTerm) {
+                // 获取emoji数据
+                const emojiId = firstEmojiButton.getAttribute('data-emoji-id')
+                const emojiName = firstEmojiButton.getAttribute('data-emoji-name')
+                
+                // 查找完整的emoji对象
+                let foundEmoji = null
+                
+                // 首先在自定义emoji中查找
+                for (const category of custom) {
+                  const found = category.emojis.find(
+                    (customEmoji) => customEmoji.id === emojiId || customEmoji.name === emojiName
+                  )
+                  if (found) {
+                    foundEmoji = found
+                    break
+                  }
+                }
+                
+                // 如果在自定义emoji中没找到，则可能是标准emoji
+                if (!foundEmoji) {
+                  // 模拟点击第一个emoji以获取其数据
+                  firstEmojiButton.click()
+                  return
+                }
+                
+                // 设置为选中的emoji并更新预览
+                onEmojiSelect(foundEmoji)
+              }
+            }, 300) // 300ms延时以确保搜索结果已更新
+          }
+        }
+      }
+      
+      searchInput.addEventListener('input', function(event) {
+        const searchTerm = event.target.value
+        triggerSearch(searchTerm)
+        
+        // 更新 URL，在 URL 后面添加 ?=关键词
+        const newUrl = searchTerm
+          ? `${window.location.origin}${window.location.pathname}?=${encodeURIComponent(searchTerm)}` 
+          : `${window.location.origin}${window.location.pathname}`
+        window.history.replaceState({}, '', newUrl)
+      })
+      
+      // 清除搜索时重置
+      searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          event.target.value = ''
+          triggerSearch('')
+          // 重置 URL
+          window.history.replaceState({}, '', `${window.location.origin}${window.location.pathname}`)
         }
       })
     </script>

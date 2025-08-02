@@ -1,0 +1,131 @@
+<extends
+  src="layout.html"
+  locals='{ "exampleName": "Privacy Policy", "exampleFile": "privacy-policy.html" }'
+>
+  <block name="download_section"></block>
+
+  <block name="content">
+    <div class="policy-container">
+      <h1 class="policy-title">Privacy Policy</h1>
+      <p class="policy-date">Last Updated: June 1, 2024</p>
+      
+      <div class="policy-section">
+        <h2>Introduction</h2>
+        <p>Welcome to EmojiToImage ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights.</p>
+      </div>
+      
+      <div class="policy-section">
+        <h2>Information We Collect</h2>
+        <p>EmojiToImage is designed to be a simple, privacy-friendly tool. We collect minimal data:</p>
+        <ul>
+          <li><strong>Usage Data:</strong> Anonymous information about how our service is used, including browser type, referring site, date and time of each visit, and pages visited.</li>
+          <li><strong>Cookies:</strong> We use essential cookies to ensure the proper functioning of our website.</li>
+        </ul>
+      </div>
+      
+      <div class="policy-section">
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide, maintain, and improve our services</li>
+          <li>Monitor and analyze usage patterns and trends</li>
+          <li>Enhance the safety and security of our services</li>
+        </ul>
+      </div>
+      
+      <div class="policy-section">
+        <h2>Data Sharing and Disclosure</h2>
+        <p>We do not sell your personal information. We may share anonymous, aggregated information with third parties for industry analysis and statistics.</p>
+      </div>
+      
+      <div class="policy-section">
+        <h2>Data Security</h2>
+        <p>We implement appropriate security measures to protect your personal information. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure.</p>
+      </div>
+      
+      <div class="policy-section">
+        <h2>Your Rights</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+        <ul>
+          <li>The right to access information we have about you</li>
+          <li>The right to request that we delete your personal information</li>
+          <li>The right to object to processing of your personal information</li>
+        </ul>
+      </div>
+      
+      <div class="policy-section">
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last Updated" date.</p>
+      </div>
+      
+      <div class="policy-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this privacy policy, please contact us at:</p>
+        <p><a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a></p>
+      </div>
+    </div>
+  </block>
+  
+  <block name="script">
+    <style>
+      .policy-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .policy-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+      
+      .policy-date {
+        text-align: center;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+      }
+      
+      .policy-section {
+        margin-bottom: 2rem;
+      }
+      
+      .policy-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--color);
+        border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+        padding-bottom: 0.5rem;
+      }
+      
+      .policy-section p, .policy-section ul {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+      
+      .policy-section ul {
+        padding-left: 1.5rem;
+      }
+      
+      .policy-section li {
+        margin-bottom: 0.5rem;
+      }
+      
+      @media (max-width: 768px) {
+        .policy-container {
+          padding: 1.5rem;
+          border-radius: 8px;
+        }
+        
+        .policy-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </block>
+</extends>

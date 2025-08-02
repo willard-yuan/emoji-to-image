@@ -4,6 +4,31 @@
 >
   <block name="download_section"></block>
 
+  <block name="header_after">
+    <div class="search-container">
+      <div class="search-wrapper">
+        <input type="text" id="emoji-search" placeholder="Search emojis..." />
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="hot-search">
+      <span>hot🔥: </span>
+      <a href="?=labubu" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">labubu</a>
+      <a href="?=smile" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">smile</a>
+      <a href="?=food" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">food</a>
+    </div>
+  </block>
+
+  <block name="content">
+    <div class="main-content">
+      <div class="picker-section" id="picker-section">
+        <div id="picker"></div>
+      </div>
+    </div>
+  </block>
+
   <block name="script">
     <style>
       /* 单列布局覆盖 */
@@ -14,8 +39,8 @@
       }
       
       .picker-section {
-        padding: 2rem 0;
-        margin-top: 2rem;
+        padding: 1rem 0;
+        margin-top: 0.5rem;
         position: relative;
       }
       
@@ -29,6 +54,18 @@
         margin: 0 auto;
       }
 
+      /* 自定义emoji样式，使其更大气美观 */
+      em-emoji-picker .emoji-mart-emoji {
+        transform: scale(1.2);
+        margin: 0.2em;
+      }
+
+      /* 确保emoji在悬停时有明显的视觉反馈 */
+      em-emoji-picker .emoji-mart-emoji:hover {
+        transform: scale(1.4);
+        transition: transform 0.2s ease;
+      }
+
       @media (min-width: 820px) {
         em-emoji-picker {
           width: auto;
@@ -36,19 +73,93 @@
         }
       }
       
+      /* 搜索框移动到标题下方居中 */
+      .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem auto 1.5rem;
+        padding: 0 2rem;
+        max-width: 600px;
+      }
+      
+      .search-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .search-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        color: #6b7280;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .search-container input {
+        width: 100%;
+        padding: 14px 20px 14px 48px;
+        border: 2px solid #e5e7eb;
+        border-radius: 16px;
+        font-size: 16px;
+        background-color: #ffffff;
+        color: var(--color);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      
+      .search-container input:focus {
+        outline: none;
+        border-color: #6772e5;
+        box-shadow: 0 0 0 4px rgba(103, 114, 229, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transform: translateY(-1px);
+      }
+      
+      .search-container input:focus + .search-icon {
+        color: #6772e5;
+      }
+      
+      .search-container input::placeholder {
+        color: #9ca3af;
+        font-weight: 400;
+      }
+      
+      .search-container input:hover {
+        border-color: #d1d5db;
+        box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+      }
+      
+      /* 隐藏emoji-mart内置的搜索框 */
+      em-emoji-picker .emoji-mart-search {
+        display: none !important;
+      }
+      
+      em-emoji-picker .emoji-mart-search-icon {
+        display: none !important;
+      }
+
       /* 复制提示框样式 */
       .copied-toast {
         position: absolute;
-        background-color: white;
-        color: #333;
-        padding: 8px 15px;
-        border-radius: 4px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
+        background-color: #6772e5;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(103, 114, 229, 0.3);
+        font-size: 16px;
+        font-weight: 500;
         z-index: 1000;
         pointer-events: none;
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform: translateY(10px);
       }
     </style>
     <script type="module">
@@ -59,8 +170,9 @@
       const createCopiedToast = () => {
         const toast = document.createElement('div');
         toast.className = 'copied-toast';
-        toast.textContent = 'Copied!';
+        toast.innerHTML = '✓ Copied!';
         toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
         document.querySelector('.picker-section').appendChild(toast);
         return toast;
       };
@@ -76,12 +188,14 @@
 
         // 将提示框居中在点击位置上方
         toast.style.left = `${relativeX - toast.offsetWidth / 2}px`;
-        toast.style.top = `${relativeY - toast.offsetHeight - 10}px`; // 在上方留出10px的间距
+        toast.style.top = `${relativeY - toast.offsetHeight - 20}px`; // 在上方留出20px的间距
         toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)'; // 重置transform，实现弹出动画
         
         // 2秒后隐藏
         setTimeout(() => {
           toast.style.opacity = '0';
+          toast.style.transform = 'translateY(10px)';
         }, 2000);
       };
       
@@ -105,7 +219,7 @@
 
         const p = document.querySelector('header p');
         if (p) {
-          p.textContent = 'Choose or search an emoji and click the emoji to get it copied, then you can paste it everywhere!';
+          p.innerHTML = 'Search for trending emojis using keywords like <a href="/copy-and-paste.html?=labubu" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">labubu</a>, <a href="/copy-and-paste.html?=smile" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">smile</a>, <a href="/copy-and-paste.html?=heart" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">heart</a>, or <a href="/?=music" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">music</a> - instantly copy your favorite emoji with a single click and paste it anywhere! Express yourself with the perfect emoji in seconds!';
         }
         
         // 创建复制提示框
@@ -122,10 +236,20 @@
         }, true); // 使用捕获阶段以确保在其他处理程序之前执行
         
         // 初始化emoji选择器
-        new Picker({
+        const picker = new Picker({
           parent: document.querySelector('#picker'),
           data: data,
           dynamicWidth: true,
+          emojiSize: 28, // 增大emoji的尺寸
+          emojiButtonRadius: '8px', // 增加按钮圆角
+          emojiButtonColors: [
+            'rgba(155,223,88,.7)',
+            'rgba(149,211,254,.7)',
+            'rgba(247,233,34,.7)',
+            'rgba(238,166,252,.7)',
+            'rgba(255,213,143,.7)',
+            'rgba(211,209,255,.7)',
+          ],
           onEmojiSelect: async (emoji) => {
             // 复制emoji到剪贴板
             const success = await copyToClipboard(emoji.native || emoji.id);
@@ -134,6 +258,80 @@
               // 显示复制成功提示在最后点击的位置
               showCopiedToast(copiedToast, lastClickX, lastClickY);
             }
+          }
+        });
+        
+        // 连接自定义搜索框与emoji-mart搜索功能
+        const searchInput = document.getElementById('emoji-search');
+        
+        // 模拟emoji-mart内部搜索输入并获取第一个搜索结果
+        const triggerSearch = (searchTerm) => {
+          const pickerElement = document.querySelector('em-emoji-picker');
+          if (pickerElement && pickerElement.shadowRoot) {
+            const internalSearchInput = pickerElement.shadowRoot.querySelector('input[type="search"]');
+            if (internalSearchInput) {
+              internalSearchInput.value = searchTerm;
+              // 触发input事件
+              const inputEvent = new Event('input', { bubbles: true });
+              internalSearchInput.dispatchEvent(inputEvent);
+              
+              // 添加延时以确保搜索结果已更新
+              if (searchTerm) {
+                setTimeout(() => {
+                  // 获取搜索结果中的第一个emoji
+                  const firstEmojiButton = pickerElement.shadowRoot.querySelector('.emoji-mart-emoji');
+                  if (firstEmojiButton) {
+                    // 高亮显示第一个emoji，但不自动复制
+                    // 只是视觉上突出显示，让用户知道这是搜索结果的第一个emoji
+                    firstEmojiButton.style.boxShadow = '0 0 0 2px #6772e5';
+                    firstEmojiButton.style.transform = 'scale(1.3)';
+                    
+                    // 2秒后恢复正常样式
+                    setTimeout(() => {
+                      firstEmojiButton.style.boxShadow = '';
+                      firstEmojiButton.style.transform = '';
+                    }, 2000);
+                  }
+                }, 300); // 300ms延时以确保搜索结果已更新
+              }
+            }
+          }
+        };
+        
+        // 检查 URL 中是否有搜索参数
+        const searchString = window.location.search;
+        let searchQuery = '';
+        
+        // 处理 ?=关键词 格式的 URL
+        if (searchString.startsWith('?=')) {
+          searchQuery = decodeURIComponent(searchString.substring(2));
+          
+          if (searchQuery) {
+            // 设置搜索框的值
+            searchInput.value = searchQuery;
+            // 触发搜索并自动高亮第一个 emoji
+            triggerSearch(searchQuery);
+          }
+        }
+        
+        searchInput.addEventListener('input', function(event) {
+          const searchTerm = event.target.value;
+          triggerSearch(searchTerm);
+          
+          // 更新 URL，在 URL 后面添加 ?=关键词
+          const newUrl = searchTerm
+            ? `${window.location.origin}${window.location.pathname}?=${encodeURIComponent(searchTerm)}` 
+            : `${window.location.origin}${window.location.pathname}`;
+          window.history.replaceState({}, '', newUrl);
+        });
+        
+        // 清除搜索时重置
+        searchInput.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+            event.target.value = '';
+            triggerSearch('');
+            // 重置 URL
+            window.history.replaceState({}, '', `${window.location.origin}${window.location.pathname}`);
           }
         });
       });
