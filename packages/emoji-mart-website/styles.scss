@@ -718,6 +718,7 @@ em-emoji {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .site-footer::before {
@@ -863,7 +864,8 @@ em-emoji {
 
 @media (max-width: 768px) {
   .site-footer {
-    padding: 1.5rem 0 0.5rem;
+    padding: 1.5rem 0 0;
+    margin-bottom: 0;
   }
   
   .footer-container {
@@ -881,6 +883,22 @@ em-emoji {
     text-align: center;
     gap: 0.5rem;
     margin: 1rem auto 0;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 1rem 0 0;
+    margin-bottom: 0;
+  }
+  
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .footer-bottom {
+    padding: 0.75rem 1rem 1rem;
   }
 }
 
