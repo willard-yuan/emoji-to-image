@@ -518,6 +518,14 @@
               // 获取搜索结果中的第一个emoji
               const firstEmojiButton = pickerElement.shadowRoot.querySelector('.emoji-mart-emoji')
               if (firstEmojiButton && searchTerm) {
+                // 放大显示第一个emoji
+                firstEmojiButton.style.transform = 'scale(1.3)';
+                
+                // 2秒后恢复正常样式
+                setTimeout(() => {
+                  firstEmojiButton.style.transform = '';
+                }, 2000);
+                
                 // 获取emoji数据
                 const emojiId = firstEmojiButton.getAttribute('data-emoji-id')
                 const emojiName = firstEmojiButton.getAttribute('data-emoji-name')

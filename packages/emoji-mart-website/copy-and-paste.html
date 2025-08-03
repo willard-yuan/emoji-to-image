@@ -15,9 +15,10 @@
     </div>
     <div class="hot-search">
       <span>hot🔥: </span>
-      <a href="?=labubu" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">labubu</a>
-      <a href="?=smile" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">smile</a>
-      <a href="?=food" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">food</a>
+      <a href="?=smile" class="hot-search-link" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">smile</a>
+      <a href="?=heart" class="hot-search-link" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">heart</a>
+      <a href="?=music" class="hot-search-link" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">music</a>
+      <a href="?=food" class="hot-search-link" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">food</a>
     </div>
   </block>
 
@@ -219,7 +220,7 @@
 
         const p = document.querySelector('header p');
         if (p) {
-          p.innerHTML = 'Search for trending emojis using keywords like <a href="/copy-and-paste.html?=labubu" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">labubu</a>, <a href="/copy-and-paste.html?=smile" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">smile</a>, <a href="/copy-and-paste.html?=heart" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">heart</a>, or <a href="/?=music" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">music</a> - instantly copy your favorite emoji with a single click and paste it anywhere! Express yourself with the perfect emoji in seconds!';
+          p.innerHTML = 'Search for trending emojis using keywords like <a href="/copy-and-paste.html?=smile" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">smile</a>, <a href="/copy-and-paste.html?=heart" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">heart</a>, or <a href="/copy-and-paste.html?=music" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit;">music</a> - instantly copy your favorite emoji with a single click and paste it anywhere! Express yourself with the perfect emoji in seconds!';
         }
         
         // 创建复制提示框
@@ -281,14 +282,11 @@
                   // 获取搜索结果中的第一个emoji
                   const firstEmojiButton = pickerElement.shadowRoot.querySelector('.emoji-mart-emoji');
                   if (firstEmojiButton) {
-                    // 高亮显示第一个emoji，但不自动复制
-                    // 只是视觉上突出显示，让用户知道这是搜索结果的第一个emoji
-                    firstEmojiButton.style.boxShadow = '0 0 0 2px #6772e5';
+                    // 放大显示第一个emoji，但不添加边框
                     firstEmojiButton.style.transform = 'scale(1.3)';
                     
                     // 2秒后恢复正常样式
                     setTimeout(() => {
-                      firstEmojiButton.style.boxShadow = '';
                       firstEmojiButton.style.transform = '';
                     }, 2000);
                   }
@@ -334,6 +332,26 @@
             window.history.replaceState({}, '', `${window.location.origin}${window.location.pathname}`);
           }
         });
+        
+        // 添加热门搜索链接的点击事件处理器
+         document.querySelectorAll('.hot-search-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+              event.preventDefault(); // 防止页面重新加载
+              
+              const href = this.getAttribute('href');
+              const searchTerm = href.startsWith('?=') ? decodeURIComponent(href.substring(2)) : '';
+              
+              if (searchTerm) {
+                // 设置搜索框的值
+                searchInput.value = searchTerm;
+                // 触发搜索
+                triggerSearch(searchTerm);
+                // 更新 URL
+                const newUrl = `${window.location.origin}${window.location.pathname}?=${encodeURIComponent(searchTerm)}`;
+                window.history.replaceState({}, '', newUrl);
+              }
+            });
+          });
       });
     </script>
   </block>
