@@ -1,0 +1,318 @@
+<extends
+  src="layout.html"
+  locals='{ "exampleName": "About Us", "exampleFile": "about-us.html" }'
+>
+  <block name="download_section"></block>
+
+  <block name="content">
+    <div class="about-container">
+      <h1 class="about-title">About EmojiToImage</h1>
+      <p class="about-subtitle">Making emoji expression accessible to everyone</p>
+      
+      <div class="about-section">
+        <h2>Our Story</h2>
+        <p>EmojiToImage was born from a simple idea: emojis should be accessible in every format, for every purpose. Whether you're a designer working on a presentation, a developer building an app, or someone who just loves expressing themselves with emojis, we believe you should have the tools to use emojis however you want.</p>
+        <p>What started as a small project to convert emojis to images has grown into a comprehensive emoji toolkit that serves thousands of users worldwide every day.</p>
+      </div>
+      
+      <div class="about-section">
+        <h2>Our Mission</h2>
+        <p>To democratize emoji usage by providing free, easy-to-use tools that let anyone convert, copy, and customize emojis for their projects. We believe in making digital expression accessible to everyone, regardless of technical expertise.</p>
+      </div>
+      
+      <div class="about-section">
+        <h2>What We Offer</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🖼️</div>
+            <h3>Emoji to Image</h3>
+            <p>Convert any emoji to high-quality PNG images in multiple sizes (64x64 to 512x512 pixels). Perfect for presentations, websites, and digital projects.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Copy & Paste</h3>
+            <p>Instantly copy emojis to your clipboard with a single click. Search by keywords and find the perfect emoji for any situation.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Smart Search</h3>
+            <p>Find emojis quickly with our intelligent search system. Search by emotion, object, or activity to discover the perfect emoji.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Mobile Friendly</h3>
+            <p>Our tools work seamlessly across all devices. Whether you're on desktop, tablet, or mobile, enjoy the same great experience.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-section">
+        <h2>Why Choose EmojiToImage?</h2>
+        <ul class="benefits-list">
+          <li><strong>100% Free:</strong> All our tools are completely free to use, with no hidden fees or premium tiers.</li>
+          <li><strong>No Registration Required:</strong> Start using our tools immediately without creating an account.</li>
+          <li><strong>Privacy Focused:</strong> We don't track your usage or store your personal data.</li>
+          <li><strong>High Quality:</strong> Get crisp, clear emoji images in multiple resolutions.</li>
+          <li><strong>Fast & Reliable:</strong> Our tools are optimized for speed and work reliably across all browsers.</li>
+          <li><strong>Regular Updates:</strong> We continuously add new features and support the latest emoji standards.</li>
+        </ul>
+      </div>
+      
+      <div class="about-section">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+          <div class="value-item">
+            <h3>🌟 Simplicity</h3>
+            <p>We believe great tools should be simple to use. No complicated interfaces, just straightforward functionality.</p>
+          </div>
+          <div class="value-item">
+            <h3>🔓 Accessibility</h3>
+            <p>Everyone should have access to digital expression tools, regardless of their technical background or budget.</p>
+          </div>
+          <div class="value-item">
+            <h3>🛡️ Privacy</h3>
+            <p>Your privacy matters. We collect minimal data and never sell your information to third parties.</p>
+          </div>
+          <div class="value-item">
+            <h3>⚡ Performance</h3>
+            <p>Fast, reliable tools that work when you need them. No waiting, no frustration, just results.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-section">
+        <h2>Join Our Community</h2>
+        <p>EmojiToImage is used by designers, developers, content creators, educators, and emoji enthusiasts from around the world. Join thousands of users who trust us for their emoji needs.</p>
+        <p>Have a feature request or feedback? We'd love to hear from you! Reach out to us at <a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a></p>
+      </div>
+      
+      <div class="about-section cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Explore our tools and discover how easy it is to work with emojis!</p>
+        <div class="cta-buttons">
+          <a href="./index.html" class="cta-button primary">Try Emoji to Image</a>
+          <a href="./copy-and-paste.html" class="cta-button secondary">Copy Emojis</a>
+        </div>
+      </div>
+    </div>
+  </block>
+  
+  <block name="script">
+    <style>
+      .about-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .about-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        color: var(--color);
+      }
+      
+      .about-subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+        font-size: 1.1rem;
+        font-style: italic;
+      }
+      
+      .about-section {
+        margin-bottom: 2.5rem;
+      }
+      
+      .about-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--color);
+        border-bottom: 2px solid rgba(103, 114, 229, 0.2);
+        padding-bottom: 0.5rem;
+      }
+      
+      .about-section p {
+        margin-bottom: 1rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+      
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      
+      .feature-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        padding: 1.5rem;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid rgba(229, 231, 235, 0.5);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .feature-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        color: var(--color);
+      }
+      
+      .feature-card p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin: 0;
+      }
+      
+      .benefits-list {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .benefits-list li {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: rgba(103, 114, 229, 0.05);
+        border-radius: 8px;
+        border-left: 4px solid #6772e5;
+      }
+      
+      .benefits-list strong {
+        color: var(--color);
+      }
+      
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      
+      .value-item {
+        text-align: center;
+        padding: 1rem;
+      }
+      
+      .value-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        color: var(--color);
+      }
+      
+      .value-item p {
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      
+      .cta-section {
+        text-align: center;
+        background: linear-gradient(135deg, #6772e5 0%, #5a67d8 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        margin-top: 2rem;
+      }
+      
+      .cta-section h2 {
+        color: white;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 1rem;
+      }
+      
+      .cta-section p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 1.5rem;
+      }
+      
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+      
+      .cta-button.primary {
+        background: white;
+        color: #6772e5;
+      }
+      
+      .cta-button.primary:hover {
+        background: #f8fafc;
+        transform: translateY(-1px);
+      }
+      
+      .cta-button.secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      
+      .cta-button.secondary:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-1px);
+      }
+      
+      .about-section a {
+        color: #6772e5;
+        text-decoration: none;
+      }
+      
+      .about-section a:hover {
+        text-decoration: underline;
+      }
+      
+      @media (max-width: 768px) {
+        .about-container {
+          padding: 1.5rem;
+          border-radius: 8px;
+        }
+        
+        .about-title {
+          font-size: 2rem;
+        }
+        
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .cta-button {
+          width: 200px;
+        }
+      }
+    </style>
+  </block>
+</extends>
