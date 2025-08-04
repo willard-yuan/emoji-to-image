@@ -1,4 +1,22 @@
+# EmojiToImage.com Robots.txt
+# Last updated: 2025-08-04
+
+# Allow all robots full access
 User-agent: *
 Allow: /
 
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Slurp
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl delay for all bots
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://emojitoimage.com/sitemap.xml

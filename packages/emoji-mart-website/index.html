@@ -8,19 +8,21 @@
   
   <block name="header_after">
     <!-- Search container -->
-    <div class="search-container">
+    <div class="search-container" role="search" aria-label="Emoji search">
       <div class="search-wrapper">
-        <input type="text" id="emoji-search" placeholder="Search emojis..." />
-        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <input type="text" id="emoji-search" placeholder="Search emojis..." aria-label="Search for emojis" title="Type emoji name like smile, heart, or labubu" />
+        <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
         </svg>
       </div>
     </div>
-    <div class="hot-search">
+    <div class="hot-search" aria-label="Popular emoji searches">
       <span>hot🔥: </span>
-      <a href="?=labubu" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">labubu</a>
-      <a href="?=smile" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">smile</a>
-      <a href="?=food" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px;">food</a>
+      <a href="?=labubu" title="Search for Labubu emojis" aria-label="Search for Labubu emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">labubu</a>
+      <a href="?=smile" title="Search for smile emojis" aria-label="Search for smile emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">smile</a>
+      <a href="?=food" title="Search for food emojis" aria-label="Search for food emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">food</a>
+      <a href="?=heart" title="Search for heart emojis" aria-label="Search for heart emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">heart</a>
+      <a href="?=music" title="Search for music emojis" aria-label="Search for music emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">music</a>
     </div>
   </block>
 
@@ -390,7 +392,11 @@
         if (selectedEmoji) {
           previewImg.style.width = `${currentSize}px`
           previewImg.style.height = `${currentSize}px`
-
+          // 更新alt和title属性以提高SEO和无障碍性
+          const emojiName = selectedEmoji.name || selectedEmojiName || 'emoji';
+          previewImg.alt = `${emojiName} emoji preview at ${currentSize}x${currentSize} pixels`;
+          previewImg.title = `${emojiName} emoji - Click download button to save as PNG`;
+          
           if (selectedEmoji.skins && selectedEmoji.skins[0] && selectedEmoji.skins[0].downloads && selectedEmoji.skins[0].downloads[currentSize]) {
             previewImg.src = selectedEmoji.skins[0].downloads[currentSize];
           } else if (selectedEmoji.skins && selectedEmoji.skins[0] && selectedEmoji.skins[0].src) {
@@ -409,13 +415,18 @@
           }
           downloadSpan.textContent = `Download ${selectedEmojiName}_${currentSize}x${currentSize}.png`
           downloadBtn.disabled = false
+          downloadBtn.setAttribute('aria-label', `Download ${selectedEmojiName} emoji as ${currentSize}x${currentSize} PNG image`)
+          downloadBtn.title = `Download ${selectedEmojiName} emoji as ${currentSize}x${currentSize} PNG image`
         } else {
           previewImg.src = ''
           previewImg.alt = 'Select an emoji to preview'
+          previewImg.title = 'No emoji selected yet'
           previewImg.style.width = 'auto'
           previewImg.style.height = 'auto'
           downloadSpan.textContent = 'Download'
           downloadBtn.disabled = true
+          downloadBtn.setAttribute('aria-label', 'Download button (select an emoji first)')
+          downloadBtn.title = 'Select an emoji first'
         }
       }
 
@@ -499,11 +510,22 @@
         }
       })
 
-      // 搜索功能
+      // 搜索功能 - 增强版，支持无障碍访问和SEO优化
       const searchInput = document.getElementById('emoji-search')
+      
+      // 添加ARIA属性以提高无障碍性
+      searchInput.setAttribute('aria-controls', 'picker')
+      searchInput.setAttribute('aria-autocomplete', 'list')
       
       // 模拟emoji-mart内部搜索输入并获取第一个搜索结果作为预览
       const triggerSearch = (searchTerm) => {
+        // 更新页面标题以反映搜索状态，有利于SEO
+        if (searchTerm) {
+          document.title = `${searchTerm} Emoji - Search Results | EmojiToImage.com`
+        } else {
+          document.title = `Search or Choose an emoji and then download it as an image | EmojiToImage.com`
+        }
+        
         const pickerElement = document.querySelector('em-emoji-picker')
         if (pickerElement && pickerElement.shadowRoot) {
           const internalSearchInput = pickerElement.shadowRoot.querySelector('input[type="search"]')
