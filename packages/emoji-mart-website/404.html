@@ -64,23 +64,30 @@
   </style>
 </head>
 <body>
-  <header role="banner">
-    <nav role="navigation" aria-label="Main Navigation">
-      <div class="container">
-        <a href="/" class="brand" aria-label="EmojiToImage Home">
-          <img src="/assets/logo.svg" alt="EmojiToImage Logo" width="32" height="32">
-          <span>EmojiToImage</span>
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="/" class="brand-link" aria-label="EmojiToImage Home">
+          <img src="/assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" width="32" height="32" />
+          <span class="brand-text">EmojiToImage.com</span>
         </a>
-        <ul role="menubar">
-          <li><a href="/" role="menuitem">Home</a></li>
-          <li><a href="/copy-and-paste.html" role="menuitem">Copy & Paste</a></li>
-          <li><a href="/dynamic-width.html" role="menuitem">Dynamic Width</a></li>
-          <li><a href="/faq.html" role="menuitem">FAQ</a></li>
-          <li><a href="/about-us.html" role="menuitem">About Us</a></li>
-        </ul>
       </div>
-    </nav>
-  </header>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+      <div class="nav-menu" id="nav-menu" role="menubar">
+        <a href="/" class="nav-link" role="menuitem">Emoji to Image</a>
+        <a href="/copy-and-paste.html" class="nav-link" role="menuitem">Emoji to Copy</a>
+        <a href="/faq.html" class="nav-link" role="menuitem">FAQ</a>
+        <a href="/about-us.html" class="nav-link" role="menuitem">About Us</a>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <div class="error-container">
@@ -100,6 +107,48 @@
       </div>
     </div>
   </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 移动端菜单切换
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          navMenu.classList.toggle('active');
+          
+          // 当菜单打开时，禁止页面滚动
+          if (!expanded) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // 点击导航链接后关闭菜单
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+          link.addEventListener('click', function() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+        
+        // 点击页面其他区域关闭菜单
+        document.addEventListener('click', function(event) {
+          if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('active')) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+  </script>
 
   <footer role="contentinfo" aria-label="Site Footer">
     <div class="container">
