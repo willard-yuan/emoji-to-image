@@ -1,167 +1,660 @@
-<extends
-  src="layout.html"
-  locals='{ "exampleName": "Terms of Service", "exampleFile": "terms-of-service.html" }'
->
-  <block name="download_section"></block>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Terms of Service - EmojiToImage.com | Our Usage Guidelines</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Review EmojiToImage.com's Terms of Service - our guidelines for using our emoji tools responsibly. Learn about user responsibilities, intellectual property, and service availability." />
+  <meta name="keywords" content="emoji terms of service, emojitoimage terms, emoji tools usage, emoji converter terms" />
+  <meta name="author" content="emojitoimage.com" />
+  <meta name="google-site-verification" content="Jfbrs2cp9kxHytTnoeffbQA1-VsFgIN2vVGSDG5_mLk" />
+  <meta name="msvalidate.01" content="C102F3C0CEB76DAFE716F24F2FCB685C" />
+  <link rel="canonical" href="https://emojitoimage.com/terms-of-service.html" />
 
-  <block name="content">
-    <div class="policy-container">
-      <h1 class="policy-title">Terms of Service</h1>
-      <p class="policy-date">Last Updated: December 15, 2024</p>
-      
-      <div class="policy-section">
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing and using EmojiToImage ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://emojitoimage.com/terms-of-service.html" />
+  <meta property="og:title" content="Terms of Service - EmojiToImage.com | Our Usage Guidelines" />
+  <meta property="og:description" content="Review EmojiToImage.com's Terms of Service - our guidelines for using our emoji tools responsibly. Learn about user responsibilities, intellectual property, and service availability." />
+  <meta property="og:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="EmojiToImage.com" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://emojitoimage.com/terms-of-service.html" />
+  <meta property="twitter:title" content="Terms of Service - EmojiToImage.com | Our Usage Guidelines" />
+  <meta property="twitter:description" content="Review EmojiToImage.com's Terms of Service - our guidelines for using our emoji tools responsibly." />
+  <meta property="twitter:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta name="twitter:site" content="@emojitoimage" />
+  <meta name="twitter:creator" content="@emojitoimage" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="./styles.scss" />
+  <style>
+    /* Hero Section Styles */
+    .terms-hero {
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terms-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .terms-hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .terms-hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #f0f0f0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+
+    .emoji-scales {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .emoji-scales span {
+      font-size: 3.5rem;
+      margin: 0 0.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .emoji-scales span:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .emoji-scales span:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* Main Content Styles */
+    .terms-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .terms-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .last-updated {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .terms-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .terms-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-header h2 span {
+      margin-right: 0.75rem;
+    }
+
+    .section-divider {
+      height: 4px;
+      width: 60px;
+      background: linear-gradient(90deg, #6366f1 0%, #f43f5e 100%);
+      border-radius: 2px;
+    }
+
+    .terms-content {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .terms-content p {
+      margin-bottom: 1rem;
+    }
+
+    .terms-content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .terms-content li {
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .terms-content li::before {
+      content: "";
+      position: absolute;
+      left: -1.2rem;
+      top: 0.6rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+    }
+
+    .terms-content a {
+      color: #6366f1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border-bottom: 1px dotted #6366f1;
+    }
+
+    .terms-content a:hover {
+      color: #f43f5e;
+      border-bottom-color: #f43f5e;
+    }
+
+    .highlight-box {
+      background: rgba(99, 102, 241, 0.05);
+      border-left: 4px solid #6366f1;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: #6366f1;
+    }
+
+    /* CTA Section */
+    .terms-cta {
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button.primary {
+      background: white;
+      color: #6366f1;
+    }
+
+    .cta-button.primary:hover {
+      background: #f8fafc;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button.secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer */
+    .terms-footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .terms-footer a {
+      color: #6366f1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .terms-footer a:hover {
+      color: #f43f5e;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .terms-hero-title {
+        font-size: 2.5rem;
+      }
+
+      .terms-hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .emoji-scales span {
+        font-size: 2.5rem;
+      }
+
+      .terms-container {
+        padding: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .terms-hero {
+        padding: 3rem 1rem;
+      }
+
+      .terms-hero-title {
+        font-size: 2rem;
+      }
+
+      .emoji-scales span {
+        font-size: 2rem;
+      }
+
+      .terms-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="/" class="brand-link" aria-label="EmojiToImage Home">
+          <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" width="32" height="32" />
+          <span class="brand-text">EmojiToImage.com</span>
+        </a>
       </div>
-      
-      <div class="policy-section">
-        <h2>2. Description of Service</h2>
-        <p>EmojiToImage is a free online tool that allows users to:</p>
-        <ul>
-          <li>Convert emojis to downloadable PNG images in various sizes (64x64, 128x128, 256x256, 512x512)</li>
-          <li>Search and copy emojis for use in other applications</li>
-          <li>Browse and discover emojis by categories and keywords</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>3. User Responsibilities</h2>
-        <p>As a user of our service, you agree to:</p>
-        <ul>
-          <li>Use the service only for lawful purposes</li>
-          <li>Not attempt to interfere with or disrupt the service</li>
-          <li>Not use automated tools to access the service excessively</li>
-          <li>Respect intellectual property rights of emoji creators and platforms</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>4. Intellectual Property</h2>
-        <p>The emojis available through our service are subject to various intellectual property rights:</p>
-        <ul>
-          <li>Emoji designs are owned by their respective creators (Apple, Google, Microsoft, etc.)</li>
-          <li>Our service provides access to these emojis for personal and commercial use as permitted by the original creators</li>
-          <li>The EmojiToImage website design and functionality are our intellectual property</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>5. Disclaimer of Warranties</h2>
-        <p>EmojiToImage is provided "as is" without any warranties, expressed or implied. We do not guarantee:</p>
-        <ul>
-          <li>Uninterrupted or error-free service</li>
-          <li>The accuracy or completeness of emoji data</li>
-          <li>That the service will meet your specific requirements</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>6. Limitation of Liability</h2>
-        <p>In no event shall EmojiToImage be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.</p>
-      </div>
-      
-      <div class="policy-section">
-        <h2>7. Service Availability</h2>
-        <p>We strive to maintain high availability of our service, but we do not guarantee 100% uptime. We reserve the right to:</p>
-        <ul>
-          <li>Temporarily suspend the service for maintenance</li>
-          <li>Modify or discontinue features with reasonable notice</li>
-          <li>Implement usage limits to ensure fair access for all users</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>8. Privacy</h2>
-        <p>Your privacy is important to us. Please review our <a href="./privacy-policy.html">Privacy Policy</a>, which also governs your use of the service, to understand our practices.</p>
-      </div>
-      
-      <div class="policy-section">
-        <h2>9. Changes to Terms</h2>
-        <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on this page. Your continued use of the service after any changes constitutes acceptance of the new terms.</p>
-      </div>
-      
-      <div class="policy-section">
-        <h2>10. Governing Law</h2>
-        <p>These terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law provisions.</p>
-      </div>
-      
-      <div class="policy-section">
-        <h2>11. Contact Information</h2>
-        <p>If you have any questions about these Terms of Service, please contact us at:</p>
-        <p><a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a></p>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+      <div class="nav-menu" id="nav-menu" role="menubar">
+        <a href="/" class="nav-link" role="menuitem">Emoji to Image</a>
+        <a href="copy-and-paste.html" class="nav-link" role="menuitem">Emoji to Copy</a>
+        <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
+        <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
       </div>
     </div>
-  </block>
-  
-  <block name="script">
-    <style>
-      .policy-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: var(--shadow-sm);
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="terms-hero">
+    <div class="terms-hero-content">
+      <h1 class="terms-hero-title">Our <span class="gradient-text">Terms of Service</span></h1>
+      <p class="terms-hero-subtitle">Guidelines for using our emoji tools responsibly</p>
+      <div class="emoji-scales">
+        <span>📜</span>
+        <span>⚖️</span>
+        <span>🤝</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="terms-main">
+    <div class="terms-container">
+      <p class="last-updated">Last Updated: December 15, 2024</p>
+
+      <!-- Introduction Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>👋</span> 1. Acceptance of Terms</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>Welcome to EmojiToImage! By accessing or using our services, you agree to be bound by these Terms of Service. These terms govern your relationship with EmojiToImage.com ("we," "our," or "us") and your use of our website, tools, and services.</p>
+          <p>If you do not agree with any part of these terms, please do not use our services. By continuing to access or use our services, you confirm your acceptance of these terms and your agreement to be bound by them.</p>
+          
+          <div class="highlight-box">
+            <h3>Important Note</h3>
+            <p>These terms may be updated periodically. It is your responsibility to review these terms regularly. Your continued use of our services after any changes constitutes your acceptance of the revised terms.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description of Service Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>🎯</span> 2. Description of Service</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>EmojiToImage provides a suite of free online tools designed to enhance your emoji experience, including:</p>
+          <ul>
+            <li><strong>Emoji to Image Conversion:</strong> Convert emojis to downloadable PNG images in various sizes (64x64, 128x128, 256x256, 512x512)</li>
+            <li><strong>Emoji Search and Copy:</strong> Easily find and copy emojis for use in your digital communications</li>
+            <li><strong>Emoji Categories:</strong> Browse and discover emojis organized by categories and keywords</li>
+            <li><strong>Cross-Platform Support:</strong> Access to emoji designs from different platforms (Apple, Google, Microsoft, etc.)</li>
+          </ul>
+          <p>Our services are designed to be simple, accessible, and user-friendly, allowing anyone to enhance their digital expression through emojis.</p>
+        </div>
+      </div>
+
+      <!-- User Responsibilities Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>🧠</span> 3. User Responsibilities</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>As a user of our services, you agree to:</p>
+          <ul>
+            <li><strong>Lawful Use:</strong> Use our services only for lawful purposes and in accordance with these terms</li>
+            <li><strong>No Interference:</strong> Not attempt to interfere with, disrupt, or gain unauthorized access to our services or servers</li>
+            <li><strong>Reasonable Usage:</strong> Not use automated tools, bots, or scripts to access our services excessively or in a way that could overload our systems</li>
+            <li><strong>Respect Intellectual Property:</strong> Acknowledge and respect the intellectual property rights of emoji creators and platforms</li>
+            <li><strong>Accurate Information:</strong> Provide accurate information when communicating with us or using our services</li>
+          </ul>
+          <p>We reserve the right to restrict or terminate access to our services for users who violate these responsibilities or engage in any activity that we determine, in our sole discretion, to be harmful to our services, other users, or third parties.</p>
+        </div>
+      </div>
+
+      <!-- Intellectual Property Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>©️</span> 4. Intellectual Property</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>The emojis available through our service are subject to various intellectual property rights:</p>
+          <ul>
+            <li><strong>Emoji Designs:</strong> The emoji designs accessible through our service are owned by their respective creators (Apple, Google, Microsoft, etc.) and are subject to their respective terms of use</li>
+            <li><strong>Fair Use:</strong> Our service provides access to these emojis for personal and commercial use as permitted by the original creators and under fair use principles</li>
+            <li><strong>Website and Tools:</strong> The EmojiToImage website design, functionality, logos, and proprietary tools are our intellectual property and are protected by copyright, trademark, and other intellectual property laws</li>
+          </ul>
+          <p>You may use the emojis obtained through our service for personal and commercial purposes, subject to the terms and conditions of the original emoji creators. However, you may not reproduce, duplicate, copy, sell, resell, or exploit any portion of our service without our express written permission.</p>
+        </div>
+      </div>
+
+      <!-- Disclaimer of Warranties Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>⚠️</span> 5. Disclaimer of Warranties</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>EmojiToImage services are provided "as is" and "as available" without any warranties of any kind, either express or implied, including but not limited to:</p>
+          <ul>
+            <li>The accuracy, completeness, or reliability of emoji data</li>
+            <li>Uninterrupted, secure, or error-free service</li>
+            <li>That our services will meet your specific requirements or expectations</li>
+            <li>That defects in the operation or functionality will be corrected</li>
+          </ul>
+          <p>We make reasonable efforts to provide high-quality services, but we cannot guarantee perfection. Your use of our services is at your own risk, and you are solely responsible for any damage to your computer system or loss of data that results from such use.</p>
+        </div>
+      </div>
+
+      <!-- Limitation of Liability Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>🛡️</span> 6. Limitation of Liability</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>To the maximum extent permitted by law, in no event shall EmojiToImage, its directors, employees, partners, agents, suppliers, or affiliates be liable for any:</p>
+          <ul>
+            <li>Indirect, incidental, special, consequential, or punitive damages</li>
+            <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+            <li>Damages resulting from interruption of service or inability to access our services</li>
+            <li>Damages resulting from any errors or omissions in any content or for any loss or damage incurred as a result of the use of any content posted, transmitted, or otherwise made available via our services</li>
+          </ul>
+          <p>This limitation applies whether the alleged liability is based on contract, tort, negligence, strict liability, or any other basis, even if we have been advised of the possibility of such damage.</p>
+        </div>
+      </div>
+
+      <!-- Service Availability Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>🔄</span> 7. Service Availability</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>While we strive to maintain high availability of our services, we do not guarantee 100% uptime. We reserve the right to:</p>
+          <ul>
+            <li><strong>Maintenance:</strong> Temporarily suspend the service for maintenance, updates, or improvements</li>
+            <li><strong>Feature Changes:</strong> Modify, add, or remove features with reasonable notice when possible</li>
+            <li><strong>Usage Limits:</strong> Implement reasonable usage limits to ensure fair access for all users and prevent abuse</li>
+            <li><strong>Service Discontinuation:</strong> Discontinue any aspect of our services at our discretion, though we will make reasonable efforts to provide advance notice</li>
+          </ul>
+          <p>We are committed to providing reliable services and will make reasonable efforts to notify users of significant changes or planned maintenance that may affect service availability.</p>
+        </div>
+      </div>
+
+      <!-- Privacy Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>🔒</span> 8. Privacy</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>Your privacy is important to us. Our <a href="./privacy-policy.html">Privacy Policy</a> explains how we collect, use, and protect your information when you use our services. By using our services, you agree to the collection and use of information in accordance with our Privacy Policy.</p>
+          <p>We are committed to protecting your personal information and only collect what is necessary to provide and improve our services. We do not sell your personal information to third parties.</p>
+          <div class="highlight-box">
+            <h3>Data Protection</h3>
+            <p>We implement appropriate security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, so we cannot guarantee absolute security.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Changes to Terms Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>📝</span> 9. Changes to Terms</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on this page. We will make reasonable efforts to notify users of significant changes by:</p>
+          <ul>
+            <li>Updating the "Last Updated" date at the top of these terms</li>
+            <li>Providing a notice on our website for significant changes</li>
+            <li>Other means as determined appropriate for the nature of the changes</li>
+          </ul>
+          <p>Your continued use of our services after any changes to these terms constitutes your acceptance of the new terms. If you do not agree with the revised terms, please discontinue use of our services.</p>
+        </div>
+      </div>
+
+      <!-- Governing Law Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>⚖️</span> 10. Governing Law</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>These terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law provisions. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in the applicable jurisdiction.</p>
+          <p>If any provision of these terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect. Our failure to enforce any right or provision of these terms will not be considered a waiver of those rights.</p>
+        </div>
+      </div>
+
+      <!-- Contact Information Section -->
+      <div class="terms-section">
+        <div class="section-header">
+          <h2><span>📧</span> 11. Contact Information</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="terms-content">
+          <p>If you have any questions, concerns, or feedback about these Terms of Service, please don't hesitate to contact us at:</p>
+          <p><a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a></p>
+          <p>We are committed to addressing your inquiries and resolving any concerns you may have about our terms or services.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="terms-cta">
+      <div class="cta-content">
+        <h2>Ready to Express Yourself with Emojis?</h2>
+        <p>Try our free emoji tools and bring your digital communication to life!</p>
+        <div class="cta-buttons">
+          <a href="/" class="cta-button primary">Convert Emojis to Images</a>
+          <a href="copy-and-paste.html" class="cta-button secondary">Copy & Paste Emojis</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="terms-footer">
+    <p>&copy; 2024 EmojiToImage.com. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about-us.html">About Us</a> | <a href="faq.html">FAQ</a></p>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+          this.setAttribute('aria-expanded', !expanded);
+          navMenu.classList.toggle('active');
+          document.body.style.overflow = expanded ? '' : 'hidden';
+        });
+
+        // Close menu when a nav link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          const isClickInside = navMenu.contains(event.target) || mobileMenuToggle.contains(event.target);
+          if (!isClickInside && navMenu.classList.contains('active')) {
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
       }
-      
-      .policy-title {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-      }
-      
-      .policy-date {
-        text-align: center;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
-      }
-      
-      .policy-section {
-        margin-bottom: 2rem;
-      }
-      
-      .policy-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: var(--color);
-        border-bottom: 1px solid rgba(229, 231, 235, 0.8);
-        padding-bottom: 0.5rem;
-      }
-      
-      .policy-section p, .policy-section ul {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-        color: var(--text-secondary);
-      }
-      
-      .policy-section ul {
-        padding-left: 1.5rem;
-      }
-      
-      .policy-section li {
-        margin-bottom: 0.5rem;
-      }
-      
-      .policy-section a {
-        color: var(--primary-color);
-        text-decoration: none;
-      }
-      
-      .policy-section a:hover {
-        text-decoration: underline;
-      }
-      
-      @media (max-width: 768px) {
-        .policy-container {
-          padding: 1.5rem;
-          border-radius: 8px;
+
+      // Set current active link
+      const links = document.querySelectorAll('.nav-link');
+      const currentPath = window.location.pathname.split('/').pop();
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        // Handle the case for the root index.html
+        if (currentPath === '' && (linkPath === '' || linkPath === 'index.html')) {
+          link.classList.add('active');
+        } else if (linkPath === currentPath) {
+          link.classList.add('active');
         }
-        
-        .policy-title {
-          font-size: 2rem;
-        }
-      }
-    </style>
-  </block>
-</extends>
+      });
+    });
+  </script>
+</body>
+</html>

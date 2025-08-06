@@ -1,131 +1,609 @@
-<extends
-  src="layout.html"
-  locals='{ "exampleName": "Privacy Policy", "exampleFile": "privacy-policy.html" }'
->
-  <block name="download_section"></block>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privacy Policy - EmojiToImage.com | How We Protect Your Data</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Learn about EmojiToImage.com's privacy practices - how we collect, use, and protect your data while using our emoji tools. We're committed to transparency and your privacy." />
+  <meta name="keywords" content="emoji privacy policy, emojitoimage privacy, emoji tools data protection, emoji converter privacy" />
+  <meta name="author" content="emojitoimage.com" />
+  <meta name="google-site-verification" content="Jfbrs2cp9kxHytTnoeffbQA1-VsFgIN2vVGSDG5_mLk" />
+  <meta name="msvalidate.01" content="C102F3C0CEB76DAFE716F24F2FCB685C" />
+  <link rel="canonical" href="https://emojitoimage.com/privacy-policy.html" />
 
-  <block name="content">
-    <div class="policy-container">
-      <h1 class="policy-title">Privacy Policy</h1>
-      <p class="policy-date">Last Updated: June 1, 2024</p>
-      
-      <div class="policy-section">
-        <h2>Introduction</h2>
-        <p>Welcome to EmojiToImage ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights.</p>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://emojitoimage.com/privacy-policy.html" />
+  <meta property="og:title" content="Privacy Policy - EmojiToImage.com | How We Protect Your Data" />
+  <meta property="og:description" content="Learn about EmojiToImage.com's privacy practices - how we collect, use, and protect your data while using our emoji tools. We're committed to transparency and your privacy." />
+  <meta property="og:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="EmojiToImage.com" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://emojitoimage.com/privacy-policy.html" />
+  <meta property="twitter:title" content="Privacy Policy - EmojiToImage.com | How We Protect Your Data" />
+  <meta property="twitter:description" content="Learn about EmojiToImage.com's privacy practices - how we collect, use, and protect your data while using our emoji tools." />
+  <meta property="twitter:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta name="twitter:site" content="@emojitoimage" />
+  <meta name="twitter:creator" content="@emojitoimage" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="./styles.scss" />
+  <style>
+    /* Hero Section Styles */
+    .privacy-hero {
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .privacy-hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .privacy-hero-subtitle {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #f0f0f0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+
+    .emoji-shield {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .emoji-shield span {
+      font-size: 3.5rem;
+      margin: 0 0.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .emoji-shield span:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .emoji-shield span:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* Main Content Styles */
+    .privacy-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .privacy-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .last-updated {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+    }
+
+    .policy-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--color);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-header h2 span {
+      margin-right: 0.75rem;
+    }
+
+    .section-divider {
+      height: 4px;
+      width: 60px;
+      background: linear-gradient(90deg, #6366f1 0%, #f43f5e 100%);
+      border-radius: 2px;
+    }
+
+    .policy-content {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .policy-content p {
+      margin-bottom: 1rem;
+    }
+
+    .policy-content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .policy-content li {
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .policy-content li::before {
+      content: "";
+      position: absolute;
+      left: -1.2rem;
+      top: 0.6rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+    }
+
+    .highlight-box {
+      background: rgba(99, 102, 241, 0.05);
+      border-left: 4px solid #6366f1;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: #6366f1;
+    }
+
+    /* CTA Section */
+    .privacy-cta {
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button.primary {
+      background: white;
+      color: #6366f1;
+    }
+
+    .cta-button.primary:hover {
+      background: #f8fafc;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button.secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer */
+    .privacy-footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .privacy-footer a {
+      color: #6366f1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .privacy-footer a:hover {
+      color: #f43f5e;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .privacy-hero-title {
+        font-size: 2.5rem;
+      }
+
+      .privacy-hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .emoji-shield span {
+        font-size: 2.5rem;
+      }
+
+      .privacy-container {
+        padding: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .privacy-hero {
+        padding: 3rem 1rem;
+      }
+
+      .privacy-hero-title {
+        font-size: 2rem;
+      }
+
+      .emoji-shield span {
+        font-size: 2rem;
+      }
+
+      .privacy-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="/" class="brand-link" aria-label="EmojiToImage Home">
+          <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" width="32" height="32" />
+          <span class="brand-text">EmojiToImage.com</span>
+        </a>
       </div>
-      
-      <div class="policy-section">
-        <h2>Information We Collect</h2>
-        <p>EmojiToImage is designed to be a simple, privacy-friendly tool. We collect minimal data:</p>
-        <ul>
-          <li><strong>Usage Data:</strong> Anonymous information about how our service is used, including browser type, referring site, date and time of each visit, and pages visited.</li>
-          <li><strong>Cookies:</strong> We use essential cookies to ensure the proper functioning of our website.</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-          <li>Provide, maintain, and improve our services</li>
-          <li>Monitor and analyze usage patterns and trends</li>
-          <li>Enhance the safety and security of our services</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>Data Sharing and Disclosure</h2>
-        <p>We do not sell your personal information. We may share anonymous, aggregated information with third parties for industry analysis and statistics.</p>
-      </div>
-      
-      <div class="policy-section">
-        <h2>Data Security</h2>
-        <p>We implement appropriate security measures to protect your personal information. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure.</p>
-      </div>
-      
-      <div class="policy-section">
-        <h2>Your Rights</h2>
-        <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
-        <ul>
-          <li>The right to access information we have about you</li>
-          <li>The right to request that we delete your personal information</li>
-          <li>The right to object to processing of your personal information</li>
-        </ul>
-      </div>
-      
-      <div class="policy-section">
-        <h2>Changes to This Privacy Policy</h2>
-        <p>We may update our privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on this page and updating the "Last Updated" date.</p>
-      </div>
-      
-      <div class="policy-section">
-        <h2>Contact Us</h2>
-        <p>If you have any questions about this privacy policy, please contact us at:</p>
-        <p><a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a></p>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+      <div class="nav-menu" id="nav-menu" role="menubar">
+        <a href="/" class="nav-link" role="menuitem">Emoji to Image</a>
+        <a href="copy-and-paste.html" class="nav-link" role="menuitem">Emoji to Copy</a>
+        <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
+        <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
       </div>
     </div>
-  </block>
-  
-  <block name="script">
-    <style>
-      .policy-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: var(--shadow-sm);
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="privacy-hero">
+    <div class="privacy-hero-content">
+      <h1 class="privacy-hero-title">Our <span class="gradient-text">Privacy Policy</span></h1>
+      <p class="privacy-hero-subtitle">How we protect your data while you express yourself with emojis</p>
+      <div class="emoji-shield">
+        <span>🔒</span>
+        <span>🛡️</span>
+        <span>🔐</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="privacy-main">
+    <div class="privacy-container">
+      <p class="last-updated">Last Updated: June 1, 2024</p>
+
+      <!-- Introduction Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>👋</span> Introduction</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>Welcome to EmojiToImage.com! We're committed to protecting your privacy and being transparent about how we handle your data. This privacy policy explains our practices regarding the collection, use, and disclosure of information when you use our emoji tools and services.</p>
+          <p>At EmojiToImage, we believe in minimizing data collection while providing you with the best emoji experience possible. Our tools are designed to be simple, effective, and privacy-friendly.</p>
+          
+          <div class="highlight-box">
+            <h3>Our Privacy Commitment</h3>
+            <p>We built EmojiToImage with privacy in mind. Our tools work primarily in your browser, minimizing the need to send your data to our servers. We don't sell your personal information and only collect what's necessary to provide and improve our services.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information We Collect Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>📊</span> Information We Collect</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>We collect minimal data to provide our emoji tools and improve your experience:</p>
+          <ul>
+            <li><strong>Usage Data:</strong> Anonymous information about how our service is used, including browser type, referring site, date and time of each visit, and pages visited. This helps us understand how users interact with our tools.</li>
+            <li><strong>Cookies:</strong> We use essential cookies to ensure the proper functioning of our website. These cookies don't track you across other sites and are necessary for our tools to work correctly.</li>
+            <li><strong>Device Information:</strong> Basic information about your device, such as screen size and browser capabilities, to optimize our tools for your viewing experience.</li>
+          </ul>
+          <p>We <strong>do not</strong> collect or store:</p>
+          <ul>
+            <li>The specific emojis you convert or use</li>
+            <li>Personal identification information (unless you contact us directly)</li>
+            <li>Payment information (we don't offer paid services)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- How We Use Your Information Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>🔍</span> How We Use Your Information</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>We use the information we collect to:</p>
+          <ul>
+            <li>Provide, maintain, and improve our emoji tools and services</li>
+            <li>Monitor and analyze usage patterns to enhance user experience</li>
+            <li>Detect, prevent, and address technical issues</li>
+            <li>Enhance the safety and security of our services</li>
+            <li>Respond to your inquiries and support requests</li>
+          </ul>
+          <p>Our primary goal is to make our emoji tools better for you while respecting your privacy.</p>
+        </div>
+      </div>
+
+      <!-- Data Sharing and Disclosure Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>🤝</span> Data Sharing and Disclosure</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>We do not sell your personal information. We may share anonymous, aggregated information with:</p>
+          <ul>
+            <li><strong>Analytics Providers:</strong> To help us understand how our services are used and improve them</li>
+            <li><strong>Service Providers:</strong> Who help us operate our website and provide our services</li>
+            <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
+          </ul>
+          <div class="highlight-box">
+            <h3>Third-Party Services</h3>
+            <p>Our website may use third-party services like Google Analytics to help us understand how our site is used. These services have their own privacy policies, and we encourage you to review them. We've configured these services to respect user privacy as much as possible.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Security Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>🔒</span> Data Security</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>We implement appropriate security measures to protect your information, including:</p>
+          <ul>
+            <li>Using HTTPS encryption for all data transmitted between your browser and our servers</li>
+            <li>Regularly updating our systems to address security vulnerabilities</li>
+            <li>Limiting access to your information to authorized personnel only</li>
+          </ul>
+          <p>However, please be aware that no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+        </div>
+      </div>
+
+      <!-- Your Rights Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>⚖️</span> Your Rights</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+          <ul>
+            <li><strong>Access:</strong> The right to request information about the data we have about you</li>
+            <li><strong>Deletion:</strong> The right to request that we delete your personal information</li>
+            <li><strong>Objection:</strong> The right to object to the processing of your personal information</li>
+            <li><strong>Restriction:</strong> The right to request that we restrict the processing of your personal information</li>
+            <li><strong>Data Portability:</strong> The right to receive your personal information in a structured, commonly used format</li>
+          </ul>
+          <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section below.</p>
+        </div>
+      </div>
+
+      <!-- Changes to This Privacy Policy Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>📝</span> Changes to This Privacy Policy</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>We may update our privacy policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by:</p>
+          <ul>
+            <li>Posting the new privacy policy on this page</li>
+            <li>Updating the "Last Updated" date at the top of this policy</li>
+            <li>Providing a notice on our website for significant changes</li>
+          </ul>
+          <p>We encourage you to review this privacy policy periodically for any changes. Your continued use of our services after any modifications indicates your acceptance of the updated policy.</p>
+        </div>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="policy-section">
+        <div class="section-header">
+          <h2><span>📧</span> Contact Us</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="policy-content">
+          <p>If you have any questions, concerns, or requests regarding this privacy policy or our data practices, please don't hesitate to contact us at:</p>
+          <p><a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a></p>
+          <p>We're committed to addressing your inquiries and resolving any concerns you may have about our privacy practices.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="privacy-cta">
+      <div class="cta-content">
+        <h2>Ready to Express Yourself with Emojis?</h2>
+        <p>Try our privacy-friendly emoji tools and bring your digital communication to life!</p>
+        <div class="cta-buttons">
+          <a href="/" class="cta-button primary">Convert Emojis to Images</a>
+          <a href="copy-and-paste.html" class="cta-button secondary">Copy & Paste Emojis</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="privacy-footer">
+    <p>&copy; 2024 EmojiToImage.com. All rights reserved. | <a href="about-us.html">About Us</a> | <a href="faq.html">FAQ</a></p>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+          this.setAttribute('aria-expanded', !expanded);
+          navMenu.classList.toggle('active');
+          document.body.style.overflow = expanded ? '' : 'hidden';
+        });
+
+        // Close menu when a nav link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          const isClickInside = navMenu.contains(event.target) || mobileMenuToggle.contains(event.target);
+          if (!isClickInside && navMenu.classList.contains('active')) {
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
       }
-      
-      .policy-title {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-      }
-      
-      .policy-date {
-        text-align: center;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
-      }
-      
-      .policy-section {
-        margin-bottom: 2rem;
-      }
-      
-      .policy-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: var(--color);
-        border-bottom: 1px solid rgba(229, 231, 235, 0.8);
-        padding-bottom: 0.5rem;
-      }
-      
-      .policy-section p, .policy-section ul {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-        color: var(--text-secondary);
-      }
-      
-      .policy-section ul {
-        padding-left: 1.5rem;
-      }
-      
-      .policy-section li {
-        margin-bottom: 0.5rem;
-      }
-      
-      @media (max-width: 768px) {
-        .policy-container {
-          padding: 1.5rem;
-          border-radius: 8px;
+
+      // Set current active link
+      const links = document.querySelectorAll('.nav-link');
+      const currentPath = window.location.pathname.split('/').pop();
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        // Handle the case for the root index.html
+        if (currentPath === '' && (linkPath === '' || linkPath === 'index.html')) {
+          link.classList.add('active');
+        } else if (linkPath === currentPath) {
+          link.classList.add('active');
         }
-        
-        .policy-title {
-          font-size: 2rem;
-        }
-      }
-    </style>
-  </block>
-</extends>
+      });
+    });
+  </script>
+</body>
+</html>

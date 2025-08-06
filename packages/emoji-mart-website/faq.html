@@ -1,245 +1,947 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Frequently Asked Questions | EmojiToImage.com</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Frequently asked questions about EmojiToImage.com. Learn how to use our emoji to image converter, download options, and more." />
-    <meta name="keywords" content="emoji faq, emoji to image faq, emoji converter questions, emoji download help" />
-    <meta name="author" content="emojitoimage.com" />
-    <link rel="canonical" href="https://emojitoimage.com/faq.html" />
+<head>
+  <meta charset="utf-8" />
+  <title>Frequently Asked Questions | EmojiToImage.com</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Find answers to common questions about using EmojiToImage.com, our free emoji to PNG converter, download options, and more." />
+  <meta name="keywords" content="emoji faq, emoji to image faq, emoji converter questions, emoji download help, emoji png, emoji tools" />
+  <meta name="author" content="emojitoimage.com" />
+  <meta name="google-site-verification" content="Jfbrs2cp9kxHytTnoeffbQA1-VsFgIN2vVGSDG5_mLk" />
+  <meta name="msvalidate.01" content="C102F3C0CEB76DAFE716F24F2FCB685C" />
+  <link rel="canonical" href="https://emojitoimage.com/faq.html" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://emojitoimage.com/faq.html" />
-    <meta property="og:title" content="Frequently Asked Questions | EmojiToImage.com" />
-    <meta property="og:description" content="Find answers to common questions about using EmojiToImage.com, our free emoji to PNG converter." />
-    <meta property="og:image" content="./assets/EmojiMart-Social.jpg" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://emojitoimage.com/faq.html" />
+  <meta property="og:title" content="Frequently Asked Questions | EmojiToImage.com" />
+  <meta property="og:description" content="Find answers to common questions about using EmojiToImage.com, our free emoji to PNG converter." />
+  <meta property="og:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="EmojiToImage.com" />
+  <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://emojitoimage.com/faq.html" />
-    <meta property="twitter:title" content="Frequently Asked Questions | EmojiToImage.com" />
-    <meta property="twitter:description" content="Find answers to common questions about using EmojiToImage.com, our free emoji to PNG converter." />
-    <meta property="twitter:image" content="./assets/EmojiMart-Social.jpg" />
-    
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
-    
-    <link rel="stylesheet" href="./styles.scss" />
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://emojitoimage.com/faq.html" />
+  <meta property="twitter:title" content="Frequently Asked Questions | EmojiToImage.com" />
+  <meta property="twitter:description" content="Find answers to common questions about using EmojiToImage.com, our free emoji to PNG converter." />
+  <meta property="twitter:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta name="twitter:site" content="@emojitoimage" />
+  <meta name="twitter:creator" content="@emojitoimage" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="./styles.scss" />
+  <style>
+    /* Hero Section Styles */
+    .faq-hero {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq-hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .faq-hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--color);
+    }
+
+    .gradient-text {
+      background: linear-gradient(120deg, #6366f1 0%, #f43f5e 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .faq-hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .emoji-animation {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .emoji-animation span {
+      font-size: 3rem;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    .emoji-animation span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .emoji-animation span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .emoji-animation span:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    .emoji-animation span:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
       }
-      
-      .faq-container {
-        max-width: 800px;
-        margin: 2rem auto 4rem;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: var(--shadow-sm);
+      50% {
+        transform: translateY(-15px);
       }
-      
-      .faq-title {
+    }
+
+    /* FAQ Main Content Styles */
+    .faq-main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .faq-search {
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.5rem 1rem 3rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s var(--easing);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    .faq-categories {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .category-button {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: white;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.3s var(--easing);
+    }
+
+    .category-button:hover {
+      background: rgba(99, 102, 241, 0.05);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .category-button.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(229, 231, 235, 0.5);
+      transition: all 0.3s var(--easing);
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--color);
+      font-size: 1.1rem;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    .faq-question-text {
+      flex: 1;
+    }
+
+    .faq-toggle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s var(--easing);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-toggle svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--primary);
+      transition: all 0.3s var(--easing);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s var(--easing);
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      max-height: 500px;
+    }
+
+    .faq-item.active .faq-toggle {
+      background: var(--primary);
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-toggle svg {
+      stroke: white;
+    }
+
+    .faq-answer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .faq-answer a:hover {
+      text-decoration: underline;
+    }
+
+    /* CTA Section Styles */
+    .cta-section {
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 20px;
+      margin: 3rem auto;
+      max-width: 1000px;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s var(--easing);
+      font-size: 1.1rem;
+    }
+
+    .cta-button.primary {
+      background: white;
+      color: #6366f1;
+    }
+
+    .cta-button.primary:hover {
+      background: #f8fafc;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button.secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer Styles */
+    .site-footer {
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      padding: 3rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+
+    .footer-brand-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .footer-brand-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(120deg, #6366f1 0%, #f43f5e 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-description {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .footer-nav-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--color);
+    }
+
+    .footer-nav-list {
+      list-style: none;
+    }
+
+    .footer-nav-item {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s var(--easing);
+    }
+
+    .footer-nav-link:hover {
+      color: var(--primary);
+    }
+
+    .footer-copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #e2e8f0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      transition: all 0.2s var(--easing);
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      white-space: nowrap;
+      font-size: 0.875rem;
+      font-weight: 500;
+      background: linear-gradient(120deg, #6366f1 0%, #f43f5e 50%, #f59e0b 100%);
+      color: white;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .faq-hero-title {
         font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        text-align: center;
-        color: var(--color);
       }
-      
-      .faq-description {
-        text-align: center;
-        color: var(--text-secondary);
-        margin-bottom: 2rem;
+
+      .faq-hero-subtitle {
         font-size: 1.1rem;
       }
-      
-      .faq-item {
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid #e2e8f0;
-        padding-bottom: 1.5rem;
+
+      .emoji-animation span {
+        font-size: 2.5rem;
       }
-      
-      .faq-item:last-child {
-        border-bottom: none;
+
+      .cta-content h2 {
+        font-size: 2rem;
       }
-      
-      .faq-question {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-        color: var(--primary);
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
       }
-      
-      .faq-answer {
-        color: var(--text-secondary);
-        line-height: 1.6;
+
+      .cta-button {
+        width: 100%;
+        max-width: 300px;
       }
-      
-      .faq-answer a {
-        color: var(--primary);
-        text-decoration: none;
+
+      .mobile-menu-toggle {
+        display: flex;
       }
-      
-      .faq-answer a:hover {
-        text-decoration: underline;
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        transition: right 0.3s var(--easing);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
       }
-      
-      .back-to-home {
-        display: block;
-        text-align: center;
-        margin-top: 2rem;
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 500;
+
+      .nav-menu.active {
+        right: 0;
       }
-      
-      .back-to-home:hover {
-        text-decoration: underline;
+
+      .nav-link {
+        padding: 1rem 0;
+        width: 100%;
+        text-align: left;
       }
-    </style>
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-      <div class="nav-container">
-        <div class="nav-brand">
-          <a href="/" class="brand-link" aria-label="EmojiToImage Home">
-            <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" width="32" height="32" />
-            <span class="brand-text">EmojiToImage.com</span>
-          </a>
+    }
+
+    @media (max-width: 480px) {
+      .faq-hero {
+        padding: 3rem 1rem;
+      }
+
+      .faq-hero-title {
+        font-size: 2rem;
+      }
+
+      .emoji-animation span {
+        font-size: 2rem;
+      }
+
+      .faq-main {
+        padding: 2rem 1rem;
+      }
+
+      .category-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="/" class="brand-link" aria-label="EmojiToImage Home">
+          <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" width="32" height="32" />
+          <span class="brand-text">EmojiToImage.com</span>
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+      <div class="nav-menu" id="nav-menu" role="menubar">
+        <a href="/" class="nav-link" role="menuitem">Emoji to Image</a>
+        <a href="copy-and-paste.html" class="nav-link" role="menuitem">Emoji to Copy</a>
+        <a href="faq.html" class="nav-link" role="menuitem" aria-current="page">FAQ</a>
+        <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="faq-hero">
+    <div class="faq-hero-content">
+      <h1 class="faq-hero-title">Frequently Asked <span class="gradient-text">Questions</span></h1>
+      <p class="faq-hero-subtitle">Find answers to common questions about using EmojiToImage.com and make the most of our free emoji tools</p>
+      <div class="emoji-animation">
+        <span>❓</span>
+        <span>🤔</span>
+        <span>💡</span>
+        <span>🔍</span>
+        <span>✨</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="faq-main">
+    <!-- Search Bar -->
+    <div class="faq-search">
+      <input type="text" class="search-input" placeholder="Search for questions..." id="faq-search-input">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </div>
+
+    <!-- Categories -->
+    <div class="faq-categories">
+      <button class="category-button active" data-category="all">All Questions</button>
+      <button class="category-button" data-category="general">General</button>
+      <button class="category-button" data-category="usage">Usage</button>
+      <button class="category-button" data-category="technical">Technical</button>
+      <button class="category-button" data-category="legal">Legal</button>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="faq-list">
+      <!-- General Category -->
+      <div class="faq-item" data-category="general">
+        <div class="faq-question">
+          <div class="faq-question-text">What is EmojiToImage.com?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
         </div>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
-            <line x1="4" y1="12" x2="20" y2="12"></line>
-            <line x1="4" y1="6" x2="20" y2="6"></line>
-            <line x1="4" y1="18" x2="20" y2="18"></line>
-          </svg>
-        </button>
-        <div class="nav-menu" id="nav-menu" role="menubar">
-          <a href="/" class="nav-link" role="menuitem">Emoji to Image</a>
-          <a href="copy-and-paste.html" class="nav-link" role="menuitem">Emoji to Copy</a>
-          <a href="faq.html" class="nav-link" role="menuitem" aria-current="page">FAQ</a>
-          <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
+        <div class="faq-answer">
+          <p>EmojiToImage.com is a free online tool that allows you to search for emojis and download them as high-quality PNG images in multiple sizes. It's perfect for projects, presentations, social media, and any other digital content where you need emoji images.</p>
+          <p>Our platform offers a comprehensive collection of emojis from various platforms, making it easy to find and use the perfect emoji for your needs.</p>
         </div>
       </div>
-    </nav>
-    
-    <div class="faq-container">
-      <h1 class="faq-title">Frequently Asked Questions</h1>
-      <p class="faq-description">Find answers to common questions about using EmojiToImage.com</p>
-      
-      <div class="faq-item">
-        <h2 class="faq-question">What is EmojiToImage.com?</h2>
-        <p class="faq-answer">EmojiToImage.com is a free online tool that allows you to search for emojis and download them as high-quality PNG images in multiple sizes. It's perfect for projects, presentations, social media, and any other digital content where you need emoji images.</p>
+
+      <!-- Usage Category -->
+      <div class="faq-item" data-category="usage">
+        <div class="faq-question">
+          <div class="faq-question-text">How do I use EmojiToImage?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Using EmojiToImage is simple! Just follow these steps:</p>
+          <ol>
+            <li>Search for an emoji by typing keywords like "smile", "heart", or "food" in the search box</li>
+            <li>Browse through the results to find your desired emoji</li>
+            <li>Click on the emoji you want to download</li>
+            <li>Select your preferred size (64x64, 128x128, 256x256, or 512x512)</li>
+            <li>Click the download button to save the PNG image to your device</li>
+          </ol>
+          <p>That's it! You can now use the downloaded emoji image in your projects.</p>
+        </div>
+      </div>
+
+      <!-- Legal Category -->
+      <div class="faq-item" data-category="legal">
+        <div class="faq-question">
+          <div class="faq-question-text">Are the emoji images free to use?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! All emoji images provided by EmojiToImage.com are free to use for personal and commercial projects. However, please note that emoji designs themselves may be subject to copyright by their original creators (Apple, Google, etc.).</p>
+          <p>We recommend checking the specific usage rights for the emoji style you're using if you plan to use them in commercial projects or applications.</p>
+        </div>
+      </div>
+
+      <!-- Technical Category -->
+      <div class="faq-item" data-category="technical">
+        <div class="faq-question">
+          <div class="faq-question-text">What image formats are available?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Currently, we offer emoji downloads in PNG format, which provides high-quality images with transparency. This format is widely supported and ideal for most digital uses.</p>
+          <p>PNG format ensures that your emojis will have a transparent background, allowing them to blend seamlessly with any colored background in your projects.</p>
+        </div>
+      </div>
+
+      <!-- Usage Category -->
+      <div class="faq-item" data-category="usage">
+        <div class="faq-question">
+          <div class="faq-question-text">Can I use these emojis on social media?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! The PNG images you download are perfect for using in social media posts, profiles, and stories. The transparent background ensures they look great on any colored background.</p>
+          <p>Many social media managers and content creators use our tool to add unique emoji flair to their posts, helping them stand out in crowded feeds.</p>
+        </div>
+      </div>
+
+      <!-- General Category -->
+      <div class="faq-item" data-category="general">
+        <div class="faq-question">
+          <div class="faq-question-text">Why would I need emoji images instead of just using emoji characters?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>While emoji characters are convenient for text, having emoji as images gives you more flexibility for design projects. Here are some advantages:</p>
+          <ul>
+            <li>You can resize them without losing quality</li>
+            <li>Use them in applications that don't support emoji characters</li>
+            <li>Include them in printed materials</li>
+            <li>Maintain consistent appearance across different platforms</li>
+            <li>Incorporate them into designs with precise positioning</li>
+            <li>Apply image effects or modifications</li>
+          </ul>
+          <p>Emoji images are particularly useful for designers, marketers, and content creators who need more control over how emojis appear in their work.</p>
+        </div>
+      </div>
+
+      <!-- General Category -->
+      <div class="faq-item" data-category="general">
+        <div class="faq-question">
+          <div class="faq-question-text">Do you offer custom emoji designs?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Currently, we don't offer custom emoji designs. Our service focuses on providing standard emoji sets in image format.</p>
+          <p>However, we're always looking to expand our offerings based on user feedback. If you're interested in custom emoji designs, let us know at <a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a>.</p>
+        </div>
+      </div>
+
+      <!-- Technical Category -->
+      <div class="faq-item" data-category="technical">
+        <div class="faq-question">
+          <div class="faq-question-text">How often are new emojis added?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>We update our emoji collection regularly to include new emojis as they are approved by the Unicode Consortium and implemented by major platforms.</p>
+          <p>The Unicode Consortium typically releases new emoji standards once a year, and we work to incorporate these new emojis into our collection as soon as they become available across major platforms.</p>
+        </div>
+      </div>
+
+      <!-- Usage Category -->
+      <div class="faq-item" data-category="usage">
+        <div class="faq-question">
+          <div class="faq-question-text">Is there a limit to how many emojis I can download?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>No, there's no limit! You can download as many emoji images as you need, as often as you need them.</p>
+          <p>Our service is designed to be freely accessible without restrictions, allowing you to use our tools for all your emoji needs without worrying about download limits or quotas.</p>
+        </div>
+      </div>
+
+      <!-- General Category -->
+      <div class="faq-item" data-category="general">
+        <div class="faq-question">
+          <div class="faq-question-text">How can I contact support?</div>
+          <div class="faq-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>If you have any questions, suggestions, or issues that aren't addressed here, please contact us at <a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a>.</p>
+          <p>We value your feedback and are committed to improving our service based on user suggestions. Don't hesitate to reach out with any thoughts or concerns!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Express Yourself?</h2>
+      <p>Start using our emoji tools today and add some personality to your digital content!</p>
+      <div class="cta-buttons">
+        <a href="/" class="cta-button primary">Convert Emojis to Images</a>
+        <a href="copy-and-paste.html" class="cta-button secondary">Copy & Paste Emojis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="/" class="footer-brand-link">
+          <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="footer-brand-icon" width="32" height="32" />
+          <span class="footer-brand-text">EmojiToImage.com</span>
+        </a>
+        <p class="footer-description">The easiest way to convert emojis to high-quality PNG images for all your creative projects.</p>
       </div>
       
-      <div class="faq-item">
-        <h2 class="faq-question">How do I use EmojiToImage?</h2>
-        <p class="faq-answer">Using EmojiToImage is simple! Just search for an emoji by typing keywords like "smile", "heart", or "food" in the search box. Browse through the results, click on your desired emoji, and then download it in your preferred size (64x64, 128x128, 256x256, or 512x512).</p>
+      <div class="footer-nav">
+        <h3 class="footer-nav-title">Tools</h3>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item"><a href="/" class="footer-nav-link">Emoji to Image</a></li>
+          <li class="footer-nav-item"><a href="copy-and-paste.html" class="footer-nav-link">Emoji to Copy</a></li>
+        </ul>
       </div>
       
-      <div class="faq-item">
-        <h2 class="faq-question">Are the emoji images free to use?</h2>
-        <p class="faq-answer">Yes! All emoji images provided by EmojiToImage.com are free to use for personal and commercial projects. However, please note that emoji designs themselves may be subject to copyright by their original creators (Apple, Google, etc.).</p>
+      <div class="footer-nav">
+        <h3 class="footer-nav-title">Company</h3>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item"><a href="about-us.html" class="footer-nav-link">About Us</a></li>
+          <li class="footer-nav-item"><a href="faq.html" class="footer-nav-link">FAQ</a></li>
+        </ul>
       </div>
       
-      <div class="faq-item">
-        <h2 class="faq-question">What image formats are available?</h2>
-        <p class="faq-answer">Currently, we offer emoji downloads in PNG format, which provides high-quality images with transparency. This format is widely supported and ideal for most digital uses.</p>
-      </div>
-      
-      <div class="faq-item">
-        <h2 class="faq-question">Can I use these emojis on social media?</h2>
-        <p class="faq-answer">Absolutely! The PNG images you download are perfect for using in social media posts, profiles, and stories. The transparent background ensures they look great on any colored background.</p>
-      </div>
-      
-      <div class="faq-item">
-        <h2 class="faq-question">Why would I need emoji images instead of just using emoji characters?</h2>
-        <p class="faq-answer">While emoji characters are convenient for text, having emoji as images gives you more flexibility for design projects. You can resize them without losing quality, use them in applications that don't support emoji characters, or include them in printed materials.</p>
-      </div>
-      
-      <div class="faq-item">
-        <h2 class="faq-question">Do you offer custom emoji designs?</h2>
-        <p class="faq-answer">Currently, we don't offer custom emoji designs. Our service focuses on providing standard emoji sets in image format.</p>
-      </div>
-      
-      <div class="faq-item">
-        <h2 class="faq-question">How often are new emojis added?</h2>
-        <p class="faq-answer">We update our emoji collection regularly to include new emojis as they are approved by the Unicode Consortium and implemented by major platforms.</p>
-      </div>
-      
-      <div class="faq-item">
-        <h2 class="faq-question">Is there a limit to how many emojis I can download?</h2>
-        <p class="faq-answer">No, there's no limit! You can download as many emoji images as you need, as often as you need them.</p>
-      </div>
-      
-      <div class="faq-item">
-        <h2 class="faq-question">How can I contact support?</h2>
-        <p class="faq-answer">If you have any questions, suggestions, or issues that aren't addressed here, please contact us at <a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a>.</p>
+      <div class="footer-nav">
+        <h3 class="footer-nav-title">Support</h3>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item"><a href="mailto:support@emojitoimage.com" class="footer-nav-link">Contact Us</a></li>
+          <li class="footer-nav-item"><a href="privacy-policy.html" class="footer-nav-link">Privacy Policy</a></li>
+        </ul>
       </div>
     </div>
     
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // 为当前页面的导航链接添加active类
-        const links = document.querySelectorAll('.nav-link');
-        const currentPath = window.location.pathname.split('/').pop();
+    <div class="footer-copyright">
+      <p>&copy; 2023 EmojiToImage.com. All rights reserved.</p>
+    </div>
+  </footer>
 
-        links.forEach(link => {
-          const linkPath = link.getAttribute('href').split('/').pop();
-          // 处理FAQ页面
-          if (currentPath === 'faq.html' && linkPath === 'faq.html') {
-            link.classList.add('active');
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set current active link
+      const links = document.querySelectorAll('.nav-link');
+      const currentPath = window.location.pathname.split('/').pop();
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        // Handle the case for the root index.html
+        if (currentPath === '' && (linkPath === '' || linkPath === 'index.html')) {
+          link.classList.add('active');
+        } else if (linkPath === currentPath) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          navMenu.classList.toggle('active');
+          
+          // Prevent page scrolling when menu is open
+          if (!expanded) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
           }
         });
         
-        // 移动端菜单切换
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        // Close menu when clicking nav links
+        links.forEach(link => {
+          link.addEventListener('click', function() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
         
-        if (menuToggle && navMenu) {
-          menuToggle.addEventListener('click', function() {
-            const expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            navMenu.classList.toggle('active');
-            
-            // 当菜单打开时，禁止页面滚动
-            if (!expanded) {
-              document.body.style.overflow = 'hidden';
-            } else {
-              document.body.style.overflow = '';
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('active')) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      // FAQ accordion functionality
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
             }
           });
           
-          // 点击导航链接后关闭菜单
-          links.forEach(link => {
-            link.addEventListener('click', function() {
-              menuToggle.setAttribute('aria-expanded', 'false');
-              navMenu.classList.remove('active');
-              document.body.style.overflow = '';
-            });
-          });
-          
-          // 点击页面其他区域关闭菜单
-          document.addEventListener('click', function(event) {
-            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('active')) {
-              menuToggle.setAttribute('aria-expanded', 'false');
-              navMenu.classList.remove('active');
-              document.body.style.overflow = '';
-            }
-          });
-        }
+          // Toggle current item
+          item.classList.toggle('active');
+        });
       });
-    </script>
-    
-    <a href="/" class="back-to-home">← Back to Home</a>
-    </div>
-    
-    <!-- Footer script for analytics or other functionality can be added here -->
-  </body>
+
+      // Category filtering
+      const categoryButtons = document.querySelectorAll('.category-button');
+      
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          const category = button.getAttribute('data-category');
+          
+          // Show/hide FAQ items based on category
+          faqItems.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Search functionality
+      const searchInput = document.getElementById('faq-search-input');
+      
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        // Reset category filters when searching
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelector('[data-category="all"]').classList.add('active');
+        
+        faqItems.forEach(item => {
+          const questionText = item.querySelector('.faq-question-text').textContent.toLowerCase();
+          const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+          
+          if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
 </html>

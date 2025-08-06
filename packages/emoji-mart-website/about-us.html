@@ -1,318 +1,767 @@
-<extends
-  src="layout.html"
-  locals='{ "exampleName": "About Us", "exampleFile": "about-us.html" }'
->
-  <block name="download_section"></block>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About Us - EmojiToImage.com | The Story Behind Our Emoji Tools</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Learn about EmojiToImage.com - our mission, values, and the team behind the free emoji tools. Discover how we're making emoji expression accessible to everyone worldwide." />
+  <meta name="keywords" content="about emojitoimage, emoji tools, emoji converter, emoji to png, emoji team, emoji mission" />
+  <meta name="author" content="emojitoimage.com" />
+  <meta name="google-site-verification" content="Jfbrs2cp9kxHytTnoeffbQA1-VsFgIN2vVGSDG5_mLk" />
+  <meta name="msvalidate.01" content="C102F3C0CEB76DAFE716F24F2FCB685C" />
+  <link rel="canonical" href="https://emojitoimage.com/about-us.html" />
 
-  <block name="content">
-    <div class="about-container">
-      <h1 class="about-title">About EmojiToImage</h1>
-      <p class="about-subtitle">Making emoji expression accessible to everyone</p>
-      
-      <div class="about-section">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://emojitoimage.com/about-us.html" />
+  <meta property="og:title" content="About EmojiToImage - The Story Behind Our Emoji Tools" />
+  <meta property="og:description" content="Learn about EmojiToImage.com - our mission, values, and the team behind the free emoji tools. Discover how we're making emoji expression accessible to everyone worldwide." />
+  <meta property="og:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="EmojiToImage.com" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://emojitoimage.com/about-us.html" />
+  <meta property="twitter:title" content="About EmojiToImage - The Story Behind Our Emoji Tools" />
+  <meta property="twitter:description" content="Learn about EmojiToImage.com - our mission, values, and the team behind the free emoji tools." />
+  <meta property="twitter:image" content="./assets/EmojiMart-Social.jpg" />
+  <meta name="twitter:site" content="@emojitoimage" />
+  <meta name="twitter:creator" content="@emojitoimage" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="./styles.scss" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="/" class="brand-link" aria-label="EmojiToImage Home">
+          <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" width="32" height="32" />
+          <span class="brand-text">EmojiToImage.com</span>
+        </a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+      <div class="nav-menu" id="nav-menu" role="menubar">
+        <a href="/" class="nav-link" role="menuitem">Emoji to Image</a>
+        <a href="copy-and-paste.html" class="nav-link" role="menuitem">Emoji to Copy</a>
+        <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
+        <a href="about-us.html" class="nav-link" role="menuitem" aria-current="page">About Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero-content">
+      <h1 class="about-hero-title">About <span class="gradient-text">EmojiToImage</span></h1>
+      <p class="about-hero-subtitle">Empowering digital expression through emoji tools</p>
+      <div class="emoji-animation">
+        <span>🚀</span>
+        <span>💡</span>
+        <span>🎨</span>
+        <span>🌈</span>
+        <span>✨</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="about-main">
+    <!-- Our Story Section -->
+    <section class="about-section">
+      <div class="section-header">
         <h2>Our Story</h2>
-        <p>EmojiToImage was born from a simple idea: emojis should be accessible in every format, for every purpose. Whether you're a designer working on a presentation, a developer building an app, or someone who just loves expressing themselves with emojis, we believe you should have the tools to use emojis however you want.</p>
-        <p>What started as a small project to convert emojis to images has grown into a comprehensive emoji toolkit that serves thousands of users worldwide every day.</p>
+        <div class="section-divider"></div>
       </div>
-      
-      <div class="about-section">
-        <h2>Our Mission</h2>
-        <p>To democratize emoji usage by providing free, easy-to-use tools that let anyone convert, copy, and customize emojis for their projects. We believe in making digital expression accessible to everyone, regardless of technical expertise.</p>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="./assets/palette.svg" alt="EmojiToImage story illustration" width="400" height="300" />
+        </div>
+        <div class="about-text">
+          <p>EmojiToImage began in 2023 when our team of designers and developers recognized a common challenge: finding high-quality emoji images for various projects was surprisingly difficult.</p>
+          <p>What started as a simple tool to convert emojis to downloadable images quickly evolved into a comprehensive platform serving thousands of users daily. Our mission expanded to include emoji copying, searching, and more features that make emoji usage accessible to everyone.</p>
+          <p>Today, we're proud to offer a suite of free emoji tools that help creators, marketers, educators, and emoji enthusiasts express themselves digitally without technical barriers.</p>
+        </div>
       </div>
-      
-      <div class="about-section">
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="about-section alternate-bg">
+      <div class="section-header">
         <h2>What We Offer</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🖼️</div>
-            <h3>Emoji to Image</h3>
-            <p>Convert any emoji to high-quality PNG images in multiple sizes (64x64 to 512x512 pixels). Perfect for presentations, websites, and digital projects.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📋</div>
-            <h3>Copy & Paste</h3>
-            <p>Instantly copy emojis to your clipboard with a single click. Search by keywords and find the perfect emoji for any situation.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔍</div>
-            <h3>Smart Search</h3>
-            <p>Find emojis quickly with our intelligent search system. Search by emotion, object, or activity to discover the perfect emoji.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📱</div>
-            <h3>Mobile Friendly</h3>
-            <p>Our tools work seamlessly across all devices. Whether you're on desktop, tablet, or mobile, enjoy the same great experience.</p>
-          </div>
-        </div>
+        <div class="section-divider"></div>
       </div>
-      
-      <div class="about-section">
-        <h2>Why Choose EmojiToImage?</h2>
-        <ul class="benefits-list">
-          <li><strong>100% Free:</strong> All our tools are completely free to use, with no hidden fees or premium tiers.</li>
-          <li><strong>No Registration Required:</strong> Start using our tools immediately without creating an account.</li>
-          <li><strong>Privacy Focused:</strong> We don't track your usage or store your personal data.</li>
-          <li><strong>High Quality:</strong> Get crisp, clear emoji images in multiple resolutions.</li>
-          <li><strong>Fast & Reliable:</strong> Our tools are optimized for speed and work reliably across all browsers.</li>
-          <li><strong>Regular Updates:</strong> We continuously add new features and support the latest emoji standards.</li>
-        </ul>
+      <div class="features-grid">
+         <div class="feature-card">
+           <div class="feature-icon-wrapper">
+             <span class="feature-icon">🖼️</span>
+           </div>
+           <h3>Emoji to Image</h3>
+           <p>Convert any emoji to high-quality PNG images in multiple sizes (64x64 to 512x512 pixels). Perfect for presentations, websites, and digital projects.</p>
+         </div>
+         <div class="feature-card">
+           <div class="feature-icon-wrapper">
+             <span class="feature-icon">📋</span>
+           </div>
+           <h3>Copy & Paste</h3>
+           <p>Instantly copy emojis to your clipboard with a single click. Search by keywords and find the perfect emoji for any situation.</p>
+         </div>
+         <div class="feature-card">
+           <div class="feature-icon-wrapper">
+             <span class="feature-icon">🔍</span>
+           </div>
+           <h3>Smart Search</h3>
+           <p>Find emojis quickly with our intelligent search system. Search by emotion, object, or activity to discover the perfect emoji.</p>
+         </div>
       </div>
-      
-      <div class="about-section">
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="about-section">
+      <div class="section-header">
         <h2>Our Values</h2>
-        <div class="values-grid">
-          <div class="value-item">
-            <h3>🌟 Simplicity</h3>
-            <p>We believe great tools should be simple to use. No complicated interfaces, just straightforward functionality.</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="values-container">
+        <div class="value-card">
+          <div class="value-icon">🌟</div>
+          <h3>Simplicity</h3>
+          <p>We believe great tools should be simple to use. No complicated interfaces, just straightforward functionality that anyone can use.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔓</div>
+          <h3>Accessibility</h3>
+          <p>Everyone should have access to digital expression tools, regardless of their technical background or budget.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <h3>Privacy</h3>
+          <p>Your privacy matters. We collect minimal data and never sell your information to third parties.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3>Performance</h3>
+          <p>Fast, reliable tools that work when you need them. No waiting, no frustration, just results.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="about-section alternate-bg">
+      <div class="section-header">
+        <h2>What Users Say</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"EmojiToImage has been a game-changer for my social media content. I use it daily to create eye-catching graphics with emojis that perfectly match my brand's tone."</p>
           </div>
-          <div class="value-item">
-            <h3>🔓 Accessibility</h3>
-            <p>Everyone should have access to digital expression tools, regardless of their technical background or budget.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👩‍💼</div>
+            <div class="author-info">
+              <h4>Sarah K.</h4>
+              <p>Social Media Manager</p>
+            </div>
           </div>
-          <div class="value-item">
-            <h3>🛡️ Privacy</h3>
-            <p>Your privacy matters. We collect minimal data and never sell your information to third parties.</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"As a teacher, I use emojis in my presentations to engage students. This tool makes it so easy to download high-quality emoji images that look great on any screen."</p>
           </div>
-          <div class="value-item">
-            <h3>⚡ Performance</h3>
-            <p>Fast, reliable tools that work when you need them. No waiting, no frustration, just results.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨‍🏫</div>
+            <div class="author-info">
+              <h4>Michael T.</h4>
+              <p>High School Educator</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"I love how fast and simple this tool is! No sign-ups, no complicated options - just search, click, and download. Exactly what I needed for my design projects."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">👨‍💻</div>
+            <div class="author-info">
+              <h4>David R.</h4>
+              <p>Freelance Designer</p>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="about-section">
-        <h2>Join Our Community</h2>
-        <p>EmojiToImage is used by designers, developers, content creators, educators, and emoji enthusiasts from around the world. Join thousands of users who trust us for their emoji needs.</p>
-        <p>Have a feature request or feedback? We'd love to hear from you! Reach out to us at <a href="mailto:support@emojitoimage.com">support@emojitoimage.com</a></p>
-      </div>
-      
-      <div class="about-section cta-section">
-        <h2>Ready to Get Started?</h2>
-        <p>Explore our tools and discover how easy it is to work with emojis!</p>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="about-section cta-section">
+      <div class="cta-content">
+        <h2>Ready to Express Yourself?</h2>
+        <p>Join thousands of users who trust EmojiToImage for their emoji needs.</p>
         <div class="cta-buttons">
           <a href="./index.html" class="cta-button primary">Try Emoji to Image</a>
           <a href="./copy-and-paste.html" class="cta-button secondary">Copy Emojis</a>
         </div>
       </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo" aria-label="Site Footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="https://emojitoimage.com" class="footer-logo" aria-label="EmojiToImage Home">
+          <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="footer-logo-img" width="40" height="40" />
+          <span class="footer-logo-text">EmojiToImage</span>
+        </a>
+        <p class="footer-tagline">Convert any emoji to downloadable image instantly</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-links-column">
+          <h3 id="footer-tools-heading">Tools</h3>
+          <ul aria-labelledby="footer-tools-heading">
+            <li><a href="./index.html" title="Convert emoji to PNG images">Emoji to Image</a></li>
+            <li><a href="./copy-and-paste.html" title="Copy emoji to clipboard">Emoji to Copy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-column">
+          <h3 id="footer-company-heading">Company & Support</h3>
+          <ul aria-labelledby="footer-company-heading">
+            <li><a href="./about-us.html" title="Learn about EmojiToImage">About Us</a></li>
+            <li><a href="./terms-of-service.html" title="Terms of Service">Terms of Service</a></li>
+            <li><a href="./contact-support.html" title="Get help with EmojiToImage">Contact Support</a></li>
+            <li><a href="./privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </block>
-  
-  <block name="script">
-    <style>
-      .about-container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: var(--shadow-sm);
+    
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2023-2024 EmojiToImage. All rights reserved.</p>
+      <p class="footer-note">Made with <span class="heart-emoji" role="img" aria-label="love">❤️</span> for emoji lovers worldwide</p>
+    </div>
+  </footer>
+
+  <!-- Custom Styles for About Page -->
+  <style>
+    /* Hero Section Styles */
+    .about-hero {
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 50%, #f59e0b 100%);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-hero-title {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .gradient-text {
+      background: white;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+
+    .emoji-animation {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .emoji-animation span {
+      font-size: 2.5rem;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    .emoji-animation span:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .emoji-animation span:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .emoji-animation span:nth-child(4) {
+      animation-delay: 1.5s;
+    }
+
+    .emoji-animation span:nth-child(5) {
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
       }
-      
-      .about-title {
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Main Content Styles */
+    .about-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .about-section {
+      margin-bottom: 5rem;
+      padding: 3rem 0;
+    }
+
+    .alternate-bg {
+      background-color: #f8fafc;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      border-radius: 20px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--color);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .section-divider {
+      height: 4px;
+      width: 80px;
+      background: linear-gradient(90deg, #6366f1, #f43f5e);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Features Grid Styles */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing);
+      text-align: center;
+      border: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .feature-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--color);
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Values Styles */
+    .values-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 16px;
+      background: white;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--easing);
+      border: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .value-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .value-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--color);
+    }
+
+    .value-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Testimonials Styles */
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--easing), box-shadow 0.3s var(--easing);
+      border: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-content {
+      padding: 2rem;
+      position: relative;
+    }
+
+    .testimonial-content:before {
+      content: '"';
+      font-size: 5rem;
+      color: rgba(99, 102, 241, 0.1);
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-content p {
+      position: relative;
+      z-index: 1;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(244, 63, 94, 0.1) 100%);
+      border-top: 1px solid rgba(229, 231, 235, 0.5);
+    }
+
+    .author-avatar {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+
+    .author-info h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--color);
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* CTA Section Styles */
+    .cta-section {
+      background: linear-gradient(135deg, #6366f1 0%, #f43f5e 100%);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 20px;
+      margin-bottom: 0;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s var(--easing);
+      font-size: 1.1rem;
+    }
+
+    .cta-button.primary {
+      background: white;
+      color: #6366f1;
+    }
+
+    .cta-button.primary:hover {
+      background: #f8fafc;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-button.secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .about-hero-title {
         font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-        color: var(--color);
       }
-      
-      .about-subtitle {
-        text-align: center;
-        color: var(--text-muted);
-        margin-bottom: 2.5rem;
-        font-size: 1.1rem;
-        font-style: italic;
-      }
-      
-      .about-section {
-        margin-bottom: 2.5rem;
-      }
-      
-      .about-section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        color: var(--color);
-        border-bottom: 2px solid rgba(103, 114, 229, 0.2);
-        padding-bottom: 0.5rem;
-      }
-      
-      .about-section p {
-        margin-bottom: 1rem;
-        line-height: 1.7;
-        color: var(--text-secondary);
-        font-size: 1rem;
-      }
-      
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-      
-      .feature-card {
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        padding: 1.5rem;
-        border-radius: 12px;
-        text-align: center;
-        border: 1px solid rgba(229, 231, 235, 0.5);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      
-      .feature-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      }
-      
-      .feature-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-      
-      .feature-card h3 {
+
+      .about-hero-subtitle {
         font-size: 1.2rem;
-        margin-bottom: 0.8rem;
-        color: var(--color);
       }
-      
-      .feature-card p {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        margin: 0;
+
+      .about-content {
+        grid-template-columns: 1fr;
       }
-      
-      .benefits-list {
-        list-style: none;
-        padding: 0;
+
+      .about-image {
+        order: 1;
       }
-      
-      .benefits-list li {
-        margin-bottom: 1rem;
-        padding: 1rem;
-        background: rgba(103, 114, 229, 0.05);
-        border-radius: 8px;
-        border-left: 4px solid #6772e5;
+
+      .about-text {
+        order: 2;
       }
-      
-      .benefits-list strong {
-        color: var(--color);
+
+      .section-header h2 {
+        font-size: 2rem;
       }
-      
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+
+      .cta-content h2 {
+        font-size: 2rem;
       }
-      
-      .value-item {
-        text-align: center;
-        padding: 1rem;
-      }
-      
-      .value-item h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.8rem;
-        color: var(--color);
-      }
-      
-      .value-item p {
-        font-size: 0.9rem;
-        margin: 0;
-      }
-      
-      .cta-section {
-        text-align: center;
-        background: linear-gradient(135deg, #6772e5 0%, #5a67d8 100%);
-        color: white;
-        padding: 2rem;
-        border-radius: 12px;
-        margin-top: 2rem;
-      }
-      
-      .cta-section h2 {
-        color: white;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-        margin-bottom: 1rem;
-      }
-      
-      .cta-section p {
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 1.5rem;
-      }
-      
+
       .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
       }
-      
+
       .cta-button {
-        display: inline-block;
-        padding: 0.8rem 1.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.2s ease;
+        width: 100%;
+        max-width: 300px;
       }
-      
-      .cta-button.primary {
-        background: white;
-        color: #6772e5;
+    }
+
+    @media (max-width: 480px) {
+      .about-hero {
+        padding: 3rem 1rem;
       }
-      
-      .cta-button.primary:hover {
-        background: #f8fafc;
-        transform: translateY(-1px);
+
+      .about-hero-title {
+        font-size: 2rem;
       }
-      
-      .cta-button.secondary {
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+
+      .emoji-animation span {
+        font-size: 2rem;
       }
-      
-      .cta-button.secondary:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: translateY(-1px);
+
+      .about-section {
+        padding: 2rem 0;
       }
-      
-      .about-section a {
-        color: #6772e5;
-        text-decoration: none;
-      }
-      
-      .about-section a:hover {
-        text-decoration: underline;
-      }
-      
-      @media (max-width: 768px) {
-        .about-container {
-          padding: 1.5rem;
-          border-radius: 8px;
+    }
+  </style>
+
+  <!-- JavaScript for Mobile Menu Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set current active link
+      const links = document.querySelectorAll('.nav-link');
+      const currentPath = window.location.pathname.split('/').pop();
+
+      links.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        // Handle the case for the root index.html
+        if (currentPath === '' && (linkPath === '' || linkPath === 'index.html')) {
+          link.classList.add('active');
+        } else if (linkPath === currentPath) {
+          link.classList.add('active');
         }
+      });
+      
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          navMenu.classList.toggle('active');
+          
+          // Prevent page scrolling when menu is open
+          if (!expanded) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        });
         
-        .about-title {
-          font-size: 2rem;
-        }
+        // Close menu when clicking nav links
+        links.forEach(link => {
+          link.addEventListener('click', function() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
         
-        .features-grid {
-          grid-template-columns: 1fr;
-        }
-        
-        .values-grid {
-          grid-template-columns: 1fr;
-        }
-        
-        .cta-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        .cta-button {
-          width: 200px;
-        }
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('active')) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
       }
-    </style>
-  </block>
-</extends>
+
+      // Add animation to feature cards on scroll
+      const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.feature-card, .value-card, .testimonial-card');
+        
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // Set initial state for animation
+      const cards = document.querySelectorAll('.feature-card, .value-card, .testimonial-card');
+      cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      });
+
+      // Run animation on load and scroll
+      window.addEventListener('load', animateOnScroll);
+      window.addEventListener('scroll', animateOnScroll);
+    });
+  </script>
+</body>
+</html>
