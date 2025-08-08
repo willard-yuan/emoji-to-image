@@ -189,12 +189,15 @@
       .story-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3.5rem;
+        gap: 3rem;
         align-items: center;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         position: relative;
         overflow: hidden;
         border-radius: 8px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
       }
       
       .story-text {
@@ -214,15 +217,21 @@
       }
       
       .story-image {
-        border-radius: 20px;
+        border-radius: 50%;
         overflow: hidden;
-        box-shadow: var(--shadow-lg);
-        transform: rotate(2deg);
+        box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         transition: all 0.4s var(--easing);
         position: relative;
         padding: 10px;
         background: white;
         border: 1px solid rgba(229, 231, 235, 0.8);
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
       }
       
       .story-image::before {
@@ -236,13 +245,13 @@
         opacity: 0;
         z-index: 1;
         transition: opacity 0.4s var(--easing);
-        border-radius: 20px;
+        border-radius: 50%;
         mix-blend-mode: overlay;
       }
       
       .story-image:hover {
-        transform: rotate(0deg) scale(1.05);
-        box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.08);
+        transform: scale(1.01);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 12px 12px -5px rgba(0, 0, 0, 0.06);
       }
       
       .story-image:hover::before {
@@ -250,18 +259,19 @@
       }
       
       .story-image img {
-        width: 100%;
-        height: auto;
+        width: 75%;
+        height: 75%;
         display: block;
-        border-radius: 12px;
+        border-radius: 50%;
         transition: all 0.4s var(--easing);
         transform: scale(0.98);
         filter: saturate(1.05);
+        object-fit: contain;
       }
       
       .story-image:hover img {
-        transform: scale(1);
-        filter: saturate(1.2);
+        transform: scale(1.03);
+        filter: saturate(1.1);
       }
       
       /* Mission Section */
@@ -601,10 +611,10 @@
         
         .story-image {
           order: -1;
-          max-width: 85%;
-          margin: 0 auto;
-          transform: rotate(0deg);
-          padding: 12px;
+          width: 280px;
+          height: 280px;
+          margin: 0 auto 1.5rem;
+          padding: 10px;
         }
         
         .story-image:hover {
@@ -613,7 +623,7 @@
         }
         
         .story-image img {
-          border-radius: 14px;
+          border-radius: 50%;
         }
         
         .mission-statement {
@@ -692,13 +702,14 @@
         }
         
         .story-image {
-          max-width: 100%;
+          width: 220px;
+          height: 220px;
           padding: 8px;
-          margin-bottom: 1rem;
+          margin: 0 auto 1.5rem;
         }
         
         .story-image img {
-          border-radius: 10px;
+          border-radius: 50%;
         }
         
         .story-text {
@@ -753,10 +764,10 @@
           <div class="story-text">
             <p>EmojiToImage began in 2023 when our founder, a developer and emoji enthusiast, faced a common challenge: finding high-quality emoji images for a design project. After hours of searching and manually converting emojis, they realized there had to be a better way.</p>
             <p>What started as a simple personal tool quickly evolved into EmojiToImage.com - a free service designed to help creators, designers, educators, and emoji lovers everywhere easily convert emojis to high-quality PNG images.</p>
-            <p>Today, our platform serves thousands of users daily, offering instant emoji conversion with multiple size options and a growing collection of unique Labubu emojis that you won't find anywhere else.</p>
+            <p>Today, our platform serves thousands of users daily, offering instant emoji conversion with multiple size options and a growing collection of unique Labubu emojis that you won't find anywhere else. Try our <a href="./index.html" title="Convert emojis to images" style="color: #6366f1; text-decoration: underline;">emoji converter</a> or explore our <a href="./copy-and-paste.html" title="Copy and paste emojis" style="color: #6366f1; text-decoration: underline;">copy & paste tool</a> to get started!</p>
           </div>
           <div class="story-image">
-            <img src="./assets/labubu_emoji_3_512x512.png" alt="The beginning of EmojiToImage" width="512" height="512" />
+            <img src="./assets/palette.svg" alt="The beginning of EmojiToImage" width="512" height="512" />
           </div>
         </div>
       </section>
@@ -768,7 +779,7 @@
           <p class="mission-statement">"To make emoji conversion simple, fast, and accessible to everyone, empowering digital expression across all platforms."</p>
           <div class="mission-text">
             <p>At EmojiToImage, we believe that emojis are a universal language that transcends cultural and linguistic barriers. Our mission is to provide the simplest, fastest way to convert emojis to high-quality images that can be used anywhere - from presentations and educational materials to social media and digital content.</p>
-            <p>We're committed to keeping our core services free, maintaining the highest standards of image quality, and continuously expanding our emoji collection to include unique and diverse options that help everyone express themselves more effectively online.</p>
+            <p>We're committed to keeping our core services free, maintaining the highest standards of image quality, and continuously expanding our emoji collection to include unique and diverse options that help everyone express themselves more effectively online. Check out our <a href="./faq.html" title="Frequently asked questions" style="color: #6366f1; text-decoration: underline;">FAQ page</a> to learn more about our features and capabilities.</p>
           </div>
         </div>
       </section>
