@@ -58,11 +58,14 @@
   font-size: 14px;
   max-width: 600px;
   padding: 0 2rem;
+  gap: 8px;
+  line-height: 1.5;
 }
 
 .hot-search span {
   margin-right: 8px;
   color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 body {
@@ -264,6 +267,20 @@ body {
       display: none;
     }
   }
+  
+  /* 热门搜索移动端优化 */
+  .hot-search {
+    padding: 0 1rem;
+    margin: 0 auto 20px;
+    gap: 6px;
+    font-size: 13px;
+  }
+  
+  .hot-search a {
+    padding: 6px 10px !important;
+    font-size: 13px;
+    margin-right: 6px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -278,13 +295,33 @@ body {
   .nav-brand .brand-link {
     .brand-text {
       display: inline;
-      font-size: 1rem;
     }
     
     .brand-icon {
       width: 24px;
       height: 24px;
     }
+  }
+  
+  /* 热门搜索小屏幕优化 */
+  .hot-search {
+    padding: 0 0.5rem;
+    margin: 0 auto 25px;
+    gap: 4px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  
+  .hot-search span {
+    margin-right: 4px;
+    font-size: 12px;
+  }
+  
+  .hot-search a {
+    padding: 5px 8px !important;
+    font-size: 12px;
+    margin-right: 4px !important;
+    border-radius: 3px !important;
   }
   
   .mobile-menu-toggle {

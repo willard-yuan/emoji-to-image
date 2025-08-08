@@ -18,59 +18,16 @@
     </div>
     <div class="hot-search" aria-label="Popular emoji searches">
       <span>hot🔥: </span>
-      <a href="?=labubu" title="Search for Labubu emojis" aria-label="Search for Labubu emojis">labubu</a>
-      <a href="?=smile" title="Search for smile emojis" aria-label="Search for smile emojis">smile</a>
-      <a href="?=food" title="Search for food emojis" aria-label="Search for food emojis">food</a>
-      <a href="?=heart" title="Search for heart emojis" aria-label="Search for heart emojis">heart</a>
-      <a href="?=music" title="Search for music emojis" aria-label="Search for music emojis">music</a>
+      <a href="?=labubu" title="Search for Labubu emojis" aria-label="Search for Labubu emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">labubu</a>
+      <a href="?=smile" title="Search for smile emojis" aria-label="Search for smile emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">smile</a>
+      <a href="?=food" title="Search for food emojis" aria-label="Search for food emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">food</a>
+      <a href="?=heart" title="Search for heart emojis" aria-label="Search for heart emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">heart</a>
+      <a href="?=music" title="Search for music emojis" aria-label="Search for music emojis" style="background-color: #f5f5f5; padding: 4px 8px; border-radius: 4px; text-decoration: none; color: inherit; margin-right: 8px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#ffe0e0'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">music</a>
     </div>
   </block>
 
   <block name="script">
     <style>
-      /* hot-search */
-      .hot-search {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0.5rem auto 1.5rem;
-        padding: 0 2rem;
-        max-width: 600px;
-      }
-      .hot-search a {
-        background-color: #f5f5f5;
-        padding: 4px 8px;
-        border-radius: 4px;
-        text-decoration: none;
-        color: inherit;
-        margin-right: 8px;
-        transition: all 0.3s ease;
-      }
-
-      .hot-search a:hover {
-        background-color: #ffe0e0;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
-
-      @media (max-width: 768px) {
-        .hot-search {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .hot-search a {
-          margin-bottom: 0.5rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hot-search a {
-          padding: 8px 12px;
-          font-size: 14px;
-        }
-      }
-
       /* 搜索框样式 */
       .search-container {
         display: flex;
@@ -643,6 +600,39 @@
           // 重置 URL
           window.history.replaceState({}, '', `${window.location.origin}${window.location.pathname}`)
         }
+      })
+      
+      // 添加热门搜索链接的点击事件处理器 - 修复移动端点击无响应问题
+      document.querySelectorAll('.hot-search a').forEach(link => {
+        // 添加触摸事件支持移动端
+        link.addEventListener('touchstart', function(event) {
+          // 防止触摸时的默认行为
+          event.preventDefault()
+        })
+        
+        link.addEventListener('click', function(event) {
+          event.preventDefault() // 防止页面重新加载
+          
+          const href = this.getAttribute('href')
+          const searchTerm = href.startsWith('?=') ? decodeURIComponent(href.substring(2)) : ''
+          
+          if (searchTerm) {
+            // 设置搜索框的值
+            searchInput.value = searchTerm
+            // 触发搜索
+            triggerSearch(searchTerm)
+            // 更新 URL
+            const newUrl = `${window.location.origin}${window.location.pathname}?=${encodeURIComponent(searchTerm)}`
+            window.history.replaceState({}, '', newUrl)
+          }
+        })
+        
+        // 添加触摸结束事件处理
+        link.addEventListener('touchend', function(event) {
+          event.preventDefault()
+          // 触发点击事件
+          this.click()
+        })
       })
     </script>
   </block>
