@@ -156,6 +156,43 @@
         background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
       }
+      
+      /* 搜索关键词链接样式 */
+      .search-keyword-link {
+        display: inline-block;
+        background-color: #f5f5f5;
+        padding: 3px 6px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        /* 确保在移动设备上有足够的点击区域 */
+        min-height: 24px;
+        min-width: 44px;
+        text-align: center;
+        margin: 0 2px;
+      }
+      
+      .search-keyword-link:hover,
+      .search-keyword-link:focus,
+      .search-keyword-link:active,
+      .search-keyword-link.active {
+        background-color: #e0e0ff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      /* 确保在触摸设备上有明显的视觉反馈 */
+      @media (hover: none) {
+        .search-keyword-link:active,
+        .search-keyword-link.active {
+          background-color: #c0c0ff;
+          transform: translateY(-1px);
+          transition: all 0.1s ease;
+        }
+      }
     </style>
   </head>
   <body>
@@ -190,7 +227,7 @@
           <h1 id="main-heading">
             Emoji to Image Converter
           </h1>
-          <p>Type a word like <a href="/?=labubu" title="Search for Labubu emojis" aria-label="Search for Labubu emojis" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#e0e0ff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">labubu</a> or <a href="/?=smile" title="Search for smile emojis" aria-label="Search for smile emojis" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#e0e0ff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">smile</a> or <a href="/?=music" title="Search for music emojis" aria-label="Search for music emojis" style="background-color: #f5f5f5; padding: 3px 6px; border-radius: 4px; text-decoration: none; color: inherit; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#e0e0ff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)'" onmouseout="this.style.backgroundColor='#f5f5f5'; this.style.transform='translateY(0)'; this.style.boxShadow='none'">music</a> - instantly find and download high-quality PNG images in multiple sizes (64x64, 128x128, 256x256, 512x512). Perfect for social media, presentations, and digital projects!</p>
+          <p>Type a word like <a href="/?=labubu" title="Search for Labubu emojis" aria-label="Search for Labubu emojis" class="search-keyword-link">labubu</a> or <a href="/?=smile" title="Search for smile emojis" aria-label="Search for smile emojis" class="search-keyword-link">smile</a> or <a href="/?=music" title="Search for music emojis" aria-label="Search for music emojis" class="search-keyword-link">music</a> - instantly find and download high-quality PNG images in multiple sizes (64x64, 128x128, 256x256, 512x512). Perfect for social media, presentations, and digital projects!</p>
         </header>
         
         <block name="header_after"></block>
@@ -363,6 +400,51 @@
             }
           });
         }
+        
+        // 增强移动设备上的链接点击体验
+        // 为所有搜索关键词链接和热门搜索链接添加触摸事件支持
+        const enhanceLinks = (selector) => {
+          const touchLinks = document.querySelectorAll(selector);
+          
+          touchLinks.forEach(link => {
+            // 防止快速点击的延迟
+            link.addEventListener('touchstart', function() {
+              this.classList.add('active');
+            }, { passive: true });
+            
+            link.addEventListener('touchend', function() {
+              this.classList.remove('active');
+              // 模拟点击事件，确保链接被激活
+              setTimeout(() => {
+                const href = this.getAttribute('href');
+                if (href) {
+                  window.location.href = href;
+                }
+              }, 10);
+            });
+            
+            // 如果用户滑动离开元素，取消激活状态
+            link.addEventListener('touchmove', function() {
+              this.classList.remove('active');
+            }, { passive: true });
+            
+            // 确保点击事件在移动设备上也能正常工作
+            link.addEventListener('click', function(e) {
+              // 在某些移动浏览器中，可能需要阻止默认行为并手动导航
+              if ('ontouchstart' in window) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href) {
+                  window.location.href = href;
+                }
+              }
+            });
+          });
+        };
+        
+        // 应用到所有相关链接
+        enhanceLinks('.search-keyword-link');
+        enhanceLinks('.hot-search-link');
       });
     </script>
   </body>
