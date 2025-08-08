@@ -18,16 +18,59 @@
     </div>
     <div class="hot-search" aria-label="Popular emoji searches">
       <span>hot🔥: </span>
-      <a href="?=labubu" title="Search for Labubu emojis" aria-label="Search for Labubu emojis" class="hot-search-link">labubu</a>
-      <a href="?=smile" title="Search for smile emojis" aria-label="Search for smile emojis" class="hot-search-link">smile</a>
-      <a href="?=food" title="Search for food emojis" aria-label="Search for food emojis" class="hot-search-link">food</a>
-      <a href="?=heart" title="Search for heart emojis" aria-label="Search for heart emojis" class="hot-search-link">heart</a>
-      <a href="?=music" title="Search for music emojis" aria-label="Search for music emojis" class="hot-search-link">music</a>
+      <a href="?=labubu" title="Search for Labubu emojis" aria-label="Search for Labubu emojis">labubu</a>
+      <a href="?=smile" title="Search for smile emojis" aria-label="Search for smile emojis">smile</a>
+      <a href="?=food" title="Search for food emojis" aria-label="Search for food emojis">food</a>
+      <a href="?=heart" title="Search for heart emojis" aria-label="Search for heart emojis">heart</a>
+      <a href="?=music" title="Search for music emojis" aria-label="Search for music emojis">music</a>
     </div>
   </block>
 
   <block name="script">
     <style>
+      /* hot-search */
+      .hot-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem auto 1.5rem;
+        padding: 0 2rem;
+        max-width: 600px;
+      }
+      .hot-search a {
+        background-color: #f5f5f5;
+        padding: 4px 8px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: inherit;
+        margin-right: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .hot-search a:hover {
+        background-color: #ffe0e0;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hot-search {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .hot-search a {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hot-search a {
+          padding: 8px 12px;
+          font-size: 14px;
+        }
+      }
+
       /* 搜索框样式 */
       .search-container {
         display: flex;
@@ -89,44 +132,6 @@
       .search-container input:hover {
         border-color: #d1d5db;
         box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
-      }
-      
-      /* 热门搜索链接样式 */
-      .hot-search-link {
-        display: inline-block;
-        background-color: #f5f5f5;
-        padding: 4px 8px;
-        border-radius: 4px;
-        text-decoration: none;
-        color: inherit;
-        margin-right: 8px;
-        margin-bottom: 8px;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        /* 确保在移动设备上有足够的点击区域 */
-        min-height: 24px;
-        min-width: 44px;
-        text-align: center;
-      }
-      
-      .hot-search-link:hover,
-      .hot-search-link:focus,
-      .hot-search-link:active,
-      .hot-search-link.active {
-        background-color: #ffe0e0;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
-      
-      /* 确保在触摸设备上有明显的视觉反馈 */
-      @media (hover: none) {
-        .hot-search-link:active,
-        .hot-search-link.active {
-          background-color: #ffb0b0;
-          transform: translateY(-1px);
-          transition: all 0.1s ease;
-        }
       }
       
       /* 隐藏emoji-mart内置的搜索框 */
@@ -639,46 +644,6 @@
           window.history.replaceState({}, '', `${window.location.origin}${window.location.pathname}`)
         }
       })
-      
-      // 增强移动设备上热门搜索链接的点击体验
-      document.addEventListener('DOMContentLoaded', function() {
-        const hotSearchLinks = document.querySelectorAll('.hot-search-link');
-        
-        hotSearchLinks.forEach(link => {
-          // 防止快速点击的延迟
-          link.addEventListener('touchstart', function() {
-            this.classList.add('active');
-          }, { passive: true });
-          
-          link.addEventListener('touchend', function() {
-            this.classList.remove('active');
-            // 模拟点击事件，确保链接被激活
-            setTimeout(() => {
-              const href = this.getAttribute('href');
-              if (href) {
-                window.location.href = href;
-              }
-            }, 10);
-          });
-          
-          // 如果用户滑动离开元素，取消激活状态
-          link.addEventListener('touchmove', function() {
-            this.classList.remove('active');
-          }, { passive: true });
-          
-          // 确保点击事件在移动设备上也能正常工作
-          link.addEventListener('click', function(e) {
-            // 在某些移动浏览器中，可能需要阻止默认行为并手动导航
-            if ('ontouchstart' in window) {
-              e.preventDefault();
-              const href = this.getAttribute('href');
-              if (href) {
-                window.location.href = href;
-              }
-            }
-          });
-        });
-      });
     </script>
   </block>
 </extends>
