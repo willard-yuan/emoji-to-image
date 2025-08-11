@@ -79,14 +79,6 @@
     <priority>0.5</priority>
   </url>
   
-  <!-- 动态宽度示例页面 -->
-  <url>
-    <loc>https://emojitoimage.com/dynamic-width.html</loc>
-    <lastmod>2025-08-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
   <!-- 404错误页面 - 不被索引但包含在站点地图中 -->
   <url>
     <loc>https://emojitoimage.com/404.html</loc>
