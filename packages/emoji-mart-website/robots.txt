@@ -1,9 +1,15 @@
 # EmojiToImage.com Robots.txt
-# Last updated: 2025-08-04
+# Last updated: 2024-08-04
 
 # Allow all robots full access
 User-agent: *
 Allow: /
+
+# Disallow specific files and directories
+Disallow: /.htaccess
+Disallow: /dist/
+Disallow: /.parcel-cache/
+Disallow: /node_modules/
 
 # Specific rules for major search engines
 User-agent: Googlebot
