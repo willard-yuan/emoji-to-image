@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 主页图片 -->
+  <url>
+    <loc>https://emojitoimage.com/</loc>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/emojitoimage_schema1.webp</image:loc>
+      <image:title>EmojiToImage Converter Tool Screenshot</image:title>
+      <image:caption>Best emoji to PNG image converter tool interface</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/emojitoimage_schema2.webp</image:loc>
+      <image:title>EmojiToImage Features Overview</image:title>
+      <image:caption>Multiple size options and instant download features</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_1_256x256.png</image:loc>
+      <image:title>Labubu Emoji PNG Sample</image:title>
+      <image:caption>Popular Labubu emoji converted to high-quality PNG format</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/palette.svg</image:loc>
+      <image:title>EmojiToImage Logo</image:title>
+      <image:caption>Official logo of EmojiToImage.com</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/EmojiMart-Social.jpg</image:loc>
+      <image:title>EmojiToImage Social Media Preview</image:title>
+      <image:caption>Social media preview image for EmojiToImage converter</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Emoji复制粘贴页面图片 -->
+  <url>
+    <loc>https://emojitoimage.com/copy-and-paste.html</loc>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/emoji-copy-paste-preview.webp</image:loc>
+      <image:title>Emoji Copy and Paste Tool</image:title>
+      <image:caption>Easy emoji copy and paste functionality</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- FAQ页面图片 -->
+  <url>
+    <loc>https://emojitoimage.com/faq.html</loc>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/faq-help-icon.svg</image:loc>
+      <image:title>FAQ Help Icon</image:title>
+      <image:caption>Frequently asked questions help icon</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- About Us页面图片 -->
+  <url>
+    <loc>https://emojitoimage.com/about-us.html</loc>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/team-photo.webp</image:loc>
+      <image:title>EmojiToImage Team</image:title>
+      <image:caption>The team behind EmojiToImage converter tool</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- 联系支持页面图片 -->
+  <url>
+    <loc>https://emojitoimage.com/contact-support.html</loc>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/contact-support-icon.svg</image:loc>
+      <image:title>Contact Support Icon</image:title>
+      <image:caption>Customer support contact icon</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>

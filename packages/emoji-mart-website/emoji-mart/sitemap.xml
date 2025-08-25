@@ -1,15 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+  
+  <!-- 主页 - 最高优先级 -->
   <url>
     <loc>https://emojitoimage.com/</loc>
-    <lastmod>2025-07-28</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2024-12-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/emojitoimage_schema1.webp</image:loc>
+      <image:title>Best EmojiToImage Converter Tool</image:title>
+      <image:caption>Convert any emoji to high-quality PNG images instantly</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_1_256x256.png</image:loc>
+      <image:title>Labubu Emoji Sample</image:title>
+      <image:caption>Popular Labubu emoji converted to PNG format</image:caption>
+    </image:image>
   </url>
+  
+
+  
+  <!-- Emoji复制粘贴工具页 -->
   <url>
     <loc>https://emojitoimage.com/copy-and-paste.html</loc>
-    <lastmod>2025-07-28</lastmod>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+  
+  <!-- FAQ页面 -->
+  <url>
+    <loc>https://emojitoimage.com/faq.html</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- About Us页面 -->
+  <url>
+    <loc>https://emojitoimage.com/about-us.html</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- 联系支持页面 -->
+  <url>
+    <loc>https://emojitoimage.com/contact-support.html</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- 隐私政策页面 -->
+  <url>
+    <loc>https://emojitoimage.com/privacy-policy.html</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- 服务条款页面 -->
+  <url>
+    <loc>https://emojitoimage.com/terms-of-service.html</loc>
+    <lastmod>2024-08-04T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+
+  
 </urlset>

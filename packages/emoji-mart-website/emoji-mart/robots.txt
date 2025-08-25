@@ -1,4 +1,29 @@
+# EmojiToImage.com Robots.txt
+# Last updated: 2024-08-04
+
+# Allow all robots full access
 User-agent: *
 Allow: /
 
+# Disallow specific files and directories
+Disallow: /.htaccess
+Disallow: /dist/
+Disallow: /.parcel-cache/
+Disallow: /node_modules/
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Slurp
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl delay for all bots
+Crawl-delay: 1
+
+# Sitemap locations
 Sitemap: https://emojitoimage.com/sitemap.xml
+Sitemap: https://emojitoimage.com/sitemap-images.xml

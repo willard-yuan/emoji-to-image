@@ -81,6 +81,10 @@ RewriteRule ^(.*)$ https://emojitoimage.com/$1 [L,R=301]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Redirect index.html to root to avoid duplicate content
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [NC,L,R=301]
+
 # Add trailing slash to directories
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,5}$
