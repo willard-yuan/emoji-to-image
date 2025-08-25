@@ -24,5 +24,6 @@ Allow: /
 # Crawl delay for all bots
 Crawl-delay: 1
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://emojitoimage.com/sitemap.xml
+Sitemap: https://emojitoimage.com/sitemap-images.xml
