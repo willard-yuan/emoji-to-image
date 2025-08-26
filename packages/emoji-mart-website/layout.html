@@ -286,6 +286,32 @@
     }
      </script>
      
+
+     
+     <!-- WebSite Structured Data -->
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "WebSite",
+       "name": "EmojiToImage.com",
+       "url": "https://emojitoimage.com",
+       "description": "Free emoji to PNG converter with multiple sizes. Search, copy, and download emojis as high-quality images.",
+       "potentialAction": {
+         "@type": "SearchAction",
+         "target": {
+           "@type": "EntryPoint",
+           "urlTemplate": "https://emojitoimage.com/?={search_term_string}"
+         },
+         "query-input": "required name=search_term_string"
+       },
+       "publisher": {
+         "@type": "Organization",
+         "name": "EmojiToImage",
+         "logo": "https://emojitoimage.com/assets/palette.svg"
+       }
+     }
+     </script>
+     
      <!-- Product/Service Structured Data -->
      <script type="application/ld+json">
      {
@@ -308,6 +334,37 @@
          "seller": {
            "@type": "Organization",
            "name": "EmojiToImage"
+         },
+         "shippingDetails": {
+           "@type": "OfferShippingDetails",
+           "shippingRate": {
+             "@type": "MonetaryAmount",
+             "value": "0",
+             "currency": "USD"
+           },
+           "deliveryTime": {
+             "@type": "ShippingDeliveryTime",
+             "handlingTime": {
+               "@type": "QuantitativeValue",
+               "minValue": 0,
+               "maxValue": 0,
+               "unitCode": "DAY"
+             },
+             "transitTime": {
+               "@type": "QuantitativeValue",
+               "minValue": 0,
+               "maxValue": 0,
+               "unitCode": "DAY"
+             }
+           }
+         },
+         "hasMerchantReturnPolicy": {
+           "@type": "MerchantReturnPolicy",
+           "applicableCountry": "US",
+           "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+           "merchantReturnDays": 30,
+           "returnMethod": "https://schema.org/ReturnByMail",
+           "returnFees": "https://schema.org/FreeReturn"
          }
        },
        "aggregateRating": {
@@ -350,29 +407,9 @@
      }
      </script>
      
-     <!-- WebSite Structured Data -->
-     <script type="application/ld+json">
-     {
-       "@context": "https://schema.org",
-       "@type": "WebSite",
-       "name": "EmojiToImage.com",
-       "url": "https://emojitoimage.com",
-       "description": "Free emoji to PNG converter with multiple sizes. Search, copy, and download emojis as high-quality images.",
-       "potentialAction": {
-         "@type": "SearchAction",
-         "target": {
-           "@type": "EntryPoint",
-           "urlTemplate": "https://emojitoimage.com/?={search_term_string}"
-         },
-         "query-input": "required name=search_term_string"
-       },
-       "publisher": {
-         "@type": "Organization",
-         "name": "EmojiToImage",
-         "logo": "https://emojitoimage.com/assets/palette.svg"
-       }
-     }
-     </script>
+     <!-- Additional structured data from child pages -->
+     <block name="head_extra"></block>
+     
      <link rel="stylesheet" href="./styles.scss" />
     
     <!-- Custom styles for consistent branding -->
