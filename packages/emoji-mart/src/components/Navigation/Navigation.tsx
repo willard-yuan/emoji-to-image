@@ -35,7 +35,7 @@ export default class Navigation extends PureComponent {
       }
 
       if (icon.src) {
-        return <img src={icon.src} />
+        return <img src={icon.src} alt={`${category.name} category icon`} />
       }
     }
 

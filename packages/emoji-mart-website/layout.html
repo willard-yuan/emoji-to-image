@@ -430,6 +430,10 @@
     </style>
   </head>
   <body>
+    <!-- Skip Navigation Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#nav-menu" class="skip-link">Skip to navigation</a>
+    
     <!-- Navigation Bar -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
       <div class="nav-container">
@@ -466,7 +470,7 @@
         
         <block name="header_after"></block>
 
-        <div class="main-content">
+        <div class="main-content" id="main-content">
           <block name="download_section">
             <!-- Download section -->
             <div class="download-section">
@@ -603,34 +607,100 @@
         const navMenu = document.querySelector('.nav-menu');
         
         if (menuToggle && navMenu) {
+          let lastFocusedElement = null;
+          
+          function openMenu() {
+            lastFocusedElement = document.activeElement;
+            menuToggle.setAttribute('aria-expanded', 'true');
+            navMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus first menu item
+            const firstMenuItem = navMenu.querySelector('a');
+            if (firstMenuItem) {
+              firstMenuItem.focus();
+            }
+          }
+          
+          function closeMenu() {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Return focus to toggle button
+            if (lastFocusedElement) {
+              lastFocusedElement.focus();
+            } else {
+              menuToggle.focus();
+            }
+          }
+          
           menuToggle.addEventListener('click', function() {
             const expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            navMenu.classList.toggle('active');
-            
-            // 当菜单打开时，禁止页面滚动
-            if (!expanded) {
-              document.body.style.overflow = 'hidden';
+            if (expanded) {
+              closeMenu();
             } else {
-              document.body.style.overflow = '';
+              openMenu();
+            }
+          });
+          
+          // Keyboard navigation for menu toggle
+          menuToggle.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              this.click();
+            }
+          });
+          
+          // Keyboard navigation within menu
+          navMenu.addEventListener('keydown', function(event) {
+            const menuItems = Array.from(navMenu.querySelectorAll('a'));
+            const currentIndex = menuItems.indexOf(document.activeElement);
+            
+            switch (event.key) {
+              case 'Escape':
+                event.preventDefault();
+                closeMenu();
+                break;
+              case 'ArrowDown':
+                event.preventDefault();
+                const nextIndex = (currentIndex + 1) % menuItems.length;
+                menuItems[nextIndex].focus();
+                break;
+              case 'ArrowUp':
+                event.preventDefault();
+                const prevIndex = currentIndex === 0 ? menuItems.length - 1 : currentIndex - 1;
+                menuItems[prevIndex].focus();
+                break;
+              case 'Home':
+                event.preventDefault();
+                menuItems[0].focus();
+                break;
+              case 'End':
+                event.preventDefault();
+                menuItems[menuItems.length - 1].focus();
+                break;
             }
           });
           
           // 点击导航链接后关闭菜单
           links.forEach(link => {
             link.addEventListener('click', function() {
-              menuToggle.setAttribute('aria-expanded', 'false');
-              navMenu.classList.remove('active');
-              document.body.style.overflow = '';
+              closeMenu();
             });
           });
           
           // 点击页面其他区域关闭菜单
           document.addEventListener('click', function(event) {
             if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && navMenu.classList.contains('active')) {
-              menuToggle.setAttribute('aria-expanded', 'false');
-              navMenu.classList.remove('active');
-              document.body.style.overflow = '';
+              closeMenu();
+            }
+          });
+          
+          // Close menu on escape key globally
+          document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+              closeMenu();
             }
           });
         }
