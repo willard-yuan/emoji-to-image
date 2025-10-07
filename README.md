@@ -1,6 +1,6 @@
 # Emoji To Image - Free Online Emoji Converter
 
-🎨 **Convert any emoji to high-quality PNG images instantly** at [emojitoimage.com](https://emojitoimage.com)
+🎨 **Convert any emoji to high-quality PNG images instantly** at <a href="https://emojitoimage.com/" rel="dofollow"><strong>emojitoimage.com</strong></a>
 
 ## What is Emoji To Image?
 
@@ -81,7 +81,7 @@ In addition to image conversion, we also provide a convenient **Emoji Copy and P
 
 ## Getting Started
 
-1. Visit [emojitoimage.com](https://emojitoimage.com)
+1. Visit <a href="https://emojitoimage.com/" rel="dofollow"><strong>emojitoimage.com</strong></a>
 2. Browse through our emoji categories or use the search function
 3. Click on any emoji to see size options
 4. Choose your preferred size and download
@@ -115,6 +115,6 @@ Emoji To Image is built with modern web technologies to provide the fastest and 
 
 ---
 
-**Start converting emojis to images today at [emojitoimage.com](https://emojitoimage.com)** 🚀
+**Start converting emojis to images today at <a href="https://emojitoimage.com/" rel="dofollow"><strong>emojitoimage.com</strong></a> 🚀
 
 *Keywords: emoji to image, emoji converter, emoji PNG, emoji download, emoji copy paste, free emoji images, emoji graphics, unicode emoji, emoji for website, emoji transparent background*
