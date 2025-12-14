@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Developer & Creator Tools | Emoji to Image</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Explore our collection of free tools for developers and creators. Includes Emoji Converter, Copy & Paste tool, and more useful utilities." />
+    <meta name="keywords" content="developer tools, creator tools, free utilities, emoji tools, web tools, productivity tools" />
+    <meta name="author" content="emojitoimage.com" />
+    <meta name="google-site-verification" content="Jfbrs2cp9kxHytTnoeffbQA1-VsFgIN2vVGSDG5_mLk" />
+    <meta name="msvalidate.01" content="C102F3C0CEB76DAFE716F24F2FCB685C" />
+    <link rel="canonical" href="https://emojitoimage.com/other-tools.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emojitoimage.com/other-tools.html" />
+    <meta property="og:title" content="Developer & Creator Tools | Emoji to Image" />
+    <meta property="og:description" content="Explore our collection of free tools for developers and creators. Includes Emoji Converter, Copy & Paste tool, and more useful utilities." />
+    <meta property="og:image" content="https://emojitoimage.com/assets/EmojiMart-Social.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://emojitoimage.com/other-tools.html" />
+    <meta property="twitter:title" content="Developer & Creator Tools | Emoji to Image" />
+    <meta property="twitter:description" content="Explore our collection of free tools for developers and creators. Includes Emoji Converter, Copy & Paste tool, and more useful utilities." />
+    <meta property="twitter:image" content="https://emojitoimage.com/assets/EmojiMart-Social.jpg" />
+    
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="./styles.scss" />
+    
+    <style>
+      :root {
+        --gradient-primary: linear-gradient(120deg, #6366f1 0%, #f43f5e 50%, #f59e0b 100%);
+        --gradient-background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+        --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+        --shadow-card-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
+      }
+      
+      body {
+        background-color: #ffffff;
+      }
+
+
+
+      /* Override main-content grid layout for this page */
+      .main-content {
+        display: block !important;
+        grid-template-columns: none !important;
+        gap: 0 !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      
+      .hero-section {
+        padding: 6rem 2rem 4rem;
+        text-align: center;
+        background: var(--gradient-background);
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      /* Subtle mesh gradient background effect */
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -20%;
+        width: 140%;
+        height: 200%;
+        background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+        z-index: 0;
+        pointer-events: none;
+      }
+      
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        z-index: 1;
+        letter-spacing: -0.02em;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: #6b7280;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .tools-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 2rem 6rem;
+      }
+      
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 2.5rem;
+      }
+      
+      .tool-card {
+        background: white;
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: var(--shadow-card);
+        transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(229, 231, 235, 0.5);
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .tool-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-card-hover);
+        border-color: rgba(99, 102, 241, 0.2);
+      }
+      
+      .tool-header {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+      }
+      
+      .tool-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      .tool-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke-width: 2px;
+      }
+      
+      .icon-blue { background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%); }
+      .icon-dark { background: linear-gradient(135deg, #4b5563 0%, #1f2937 100%); }
+      .icon-slate { background: linear-gradient(135deg, #64748b 0%, #475569 100%); }
+      .icon-yellow { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); }
+      .icon-pink { background: linear-gradient(135deg, #f472b6 0%, #db2777 100%); }
+      .icon-green { background: linear-gradient(135deg, #34d399 0%, #059669 100%); }
+      .icon-red { background: linear-gradient(135deg, #f87171 0%, #dc2626 100%); }
+      
+      .tool-info {
+        flex: 1;
+        padding-top: 0.25rem;
+      }
+      
+      .tool-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #111827;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      
+      .tool-subtitle {
+        font-size: 0.9rem;
+        color: #6b7280;
+        line-height: 1.5;
+        font-weight: 500;
+      }
+      
+      .tool-description {
+        color: #4b5563;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        flex-grow: 1;
+      }
+      
+      .tool-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        color: white;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        gap: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+      }
+      
+      .tool-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px -3px rgba(139, 92, 246, 0.3);
+        filter: brightness(1.05);
+      }
+      
+      .tool-button svg {
+        width: 18px;
+        height: 18px;
+        transition: transform 0.3s ease;
+      }
+      
+      .tool-button:hover svg {
+        transform: translateX(4px);
+      }
+      
+      @media (max-width: 640px) {
+        .hero-title { font-size: 2.5rem; }
+        .hero-section { padding: 4rem 1.5rem 3rem; }
+        .tools-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        .tool-card { padding: 1.5rem; }
+        .tool-icon { width: 56px; height: 56px; }
+      }
+    </style>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="0e936cae-f1f2-449b-b5aa-7e93d8bca623"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="/" class="brand-link" aria-label="EmojiToImage Home">
+            <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="brand-icon" width="32" height="32" />
+            <span class="brand-text">Emoji to Image</span>
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hamburger-icon">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+        </button>
+        <div class="nav-menu" id="nav-menu" role="menubar">
+          <a href="/" class="nav-link" role="menuitem">Emoji to Image</a>
+          <a href="copy-and-paste.html" class="nav-link" role="menuitem">Emoji to Copy</a>
+          <a href="faq.html" class="nav-link" role="menuitem">FAQ</a>
+          <a href="other-tools.html" class="nav-link active" role="menuitem" aria-current="page">Other Tools</a>
+        </div>
+      </div>
+    </nav>
+    
+    <main class="main-content">
+      <section class="hero-section">
+        <h1 class="hero-title">Tools You May Also Like</h1>
+        <p class="hero-subtitle">Discover other useful tools for developers, content creators, and social media users.</p>
+      </section>
+      
+      <div class="tools-container">
+        <div class="tools-grid">
+          <!-- Tool 1: Avatar Cropper -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon icon-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.13 1L6 16a2 2 0 0 0 2 2h15"></path><path d="M1 6.13L16 6a2 2 0 0 1 2 2v15"></path></svg>
+              </div>
+              <div class="tool-info">
+                <h2 class="tool-title">Avatar Cropper</h2>
+                <p class="tool-subtitle">Quickly Crop Avatar for Discord, X, etc.</p>
+              </div>
+            </div>
+            <p class="tool-description">Quick and accurate avatar cropper tool. Crop perfect avatar for Discord, X (Twitter), etc. No signup required.</p>
+            <a href="https://avatarcropper.app" class="tool-button" target="_blank" rel="noopener">
+              View Tool
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </article>
+          
+          <!-- Tool 2: Discord Fonts Generator -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon icon-dark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+              </div>
+              <div class="tool-info">
+                <h2 class="tool-title">Discord Fonts Generator</h2>
+                <p class="tool-subtitle">Generate stylish Discord fonts and text</p>
+              </div>
+            </div>
+            <p class="tool-description">Generate stylish Discord fonts and text for your profile and messages.</p>
+            <a href="https://discord-decoration.art/discord_front" class="tool-button" target="_blank" rel="noopener">
+              View Tool
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </article>
+          
+          <!-- Tool 3: Discord Markdown Live Previewer -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon icon-slate">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <div class="tool-info">
+                <h2 class="tool-title">Discord Markdown Live Previewer</h2>
+                <p class="tool-subtitle">Discord markdown editor with live preview</p>
+              </div>
+            </div>
+            <p class="tool-description">Discord markdown editor with live preview. See exactly how your text will look on Discord.</p>
+            <a href="https://discord-markdown-previewer.pro" class="tool-button" target="_blank" rel="noopener">
+              View Tool
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </article>
+          
+          <!-- Tool 4: GIF Frame Extractor -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon icon-yellow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+              </div>
+              <div class="tool-info">
+                <h2 class="tool-title">GIF Frame Extractor</h2>
+                <p class="tool-subtitle">Extract frames from animated GIFs</p>
+              </div>
+            </div>
+            <p class="tool-description">Extract frames from animated GIFs easily. View and save individual frames from your favorite GIFs.</p>
+            <a href="https://discord-decoration.art/gif-extractor" class="tool-button" target="_blank" rel="noopener">
+              View Tool
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </article>
+          
+          <!-- Tool 5: EmojiFace -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon icon-pink">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+              </div>
+              <div class="tool-info">
+                <h2 class="tool-title">EmojiFace</h2>
+                <p class="tool-subtitle">Hide your Face with One Click</p>
+              </div>
+            </div>
+            <p class="tool-description">Best Free Tool to Hide Your Face with Emoji, Blur or Pixelation for Privacy, and All You Need is One Click.</p>
+            <a href="https://emojiface.us" class="tool-button" target="_blank" rel="noopener">
+              View Tool
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </article>
+          
+          <!-- Tool 6: YTPlaylistLength -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-icon icon-red">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </div>
+              <div class="tool-info">
+                <h2 class="tool-title">YTPlaylistLength - Best Youtube Playlist Length Calculator</h2>
+                <p class="tool-subtitle">Calculate playlist duration instantly</p>
+              </div>
+            </div>
+            <p class="tool-description">Calculate the total length of any YouTube playlists quickly! Paste playlist URL to get instant result on how long it takes to watch all the videos in one go.</p>
+            <a href="https://ytplaylistlength.pro" class="tool-button" target="_blank" rel="noopener">
+              View Tool
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="site-footer" role="contentinfo" aria-label="Site Footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="https://emojitoimage.com" class="footer-logo" aria-label="EmojiToImage Home">
+            <img src="./assets/palette.svg" alt="EmojiToImage Logo" class="footer-logo-img" width="40" height="40" />
+            <span class="footer-logo-text">EmojiToImage</span>
+          </a>
+          <p class="footer-tagline">Convert any emoji to downloadable image instantly</p>
+          <div class="footer-social">
+            <a href="https://twitter.com/emojitoimage" aria-label="Follow us on Twitter" rel="noopener" target="_blank" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+            </a>
+            <a href="https://github.com/emojitoimage" aria-label="Visit our GitHub" rel="noopener" target="_blank" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-links-column">
+            <h3 id="footer-tools-heading">Tools</h3>
+            <ul aria-labelledby="footer-tools-heading">
+              <li><a href="./index.html" title="Convert emoji to PNG images">Emoji to Image</a></li>
+              <li><a href="./copy-and-paste.html" title="Copy emoji to clipboard">Emoji to Copy</a></li>
+              <li><a href="./other-tools.html" title="Other useful tools">Other Tools</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h3 id="footer-company-heading">Company</h3>
+            <ul aria-labelledby="footer-company-heading">
+              <li><a href="./about-us.html" title="Learn about EmojiToImage">About Us</a></li>
+              <li><a href="./faq.html" title="Frequently Asked Questions">FAQ</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h3 id="footer-legal-heading">Legal</h3>
+            <ul aria-labelledby="footer-legal-heading">
+              <li><a href="./terms-of-service.html" title="Terms of Service">Terms of Service</a></li>
+              <li><a href="./privacy-policy.html" title="Privacy Policy">Privacy Policy</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-links-column">
+            <h3 id="footer-support-heading">Support</h3>
+            <ul aria-labelledby="footer-support-heading">
+              <li><a href="./contact-support.html" title="Get help with EmojiToImage">Contact Support</a></li>
+              <li><a href="mailto:support@emojitoimage.com" title="Email us">Email Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 EmojiToImage. All rights reserved.</p>
+        <p class="footer-note">Made with <span class="heart-emoji" role="img" aria-label="love">❤️</span> for emoji lovers worldwide</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // 移动端菜单切换
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (menuToggle && navMenu) {
+          menuToggle.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('active');
+            
+            if (!expanded) {
+              document.body.style.overflow = 'hidden';
+            } else {
+              document.body.style.overflow = '';
+            }
+          });
+          
+          // 点击链接关闭菜单
+          const links = navMenu.querySelectorAll('a');
+          links.forEach(link => {
+            link.addEventListener('click', () => {
+              menuToggle.setAttribute('aria-expanded', 'false');
+              navMenu.classList.remove('active');
+              document.body.style.overflow = '';
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
