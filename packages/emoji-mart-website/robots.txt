@@ -1,5 +1,5 @@
 # EmojiToImage.com Robots.txt
-# Last updated: 2024-08-04
+# Last updated: 2025-12-14
 
 # Allow all robots full access
 User-agent: *

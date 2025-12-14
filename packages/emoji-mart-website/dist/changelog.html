@@ -13,30 +13,21 @@
     <meta name="yandex-verification" content="cdea4469bf2383e5">
     <meta name="msvalidate.01" content="C102F3C0CEB76DAFE716F24F2FCB685C">
     
-    <title>FAQ - Emoji to Image Converter | Common Questions & Help</title>
-    <meta name="description" content="Frequently Asked Questions about Emoji to Image Converter. Learn how to download transparent PNG emojis, usage rights, and image sizes.">
-    <meta name="keywords" content="emoji converter faq, how to download emoji, emoji usage rights, emoji png help, emoji tool questions, transparent emoji guide">
-    <link rel="canonical" href="https://emojitoimage.com/faq.html">
-    
-    <!-- Open Graph / Facebook -->
+    <title>Changelog - Emoji to Image Converter | Updates & New Features</title>
+    <meta name="description" content="Track all the improvements, new features, and bug fixes we've made to enhance your Emoji to Image experience.">
+    <meta name="keywords" content="emoji to image changelog, updates, new features, release notes, version history">
+    <link rel="canonical" href="https://emojitoimage.com/changelog.html">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://emojitoimage.com/faq.html">
-    <meta property="og:title" content="FAQ - Emoji to Image Converter | Common Questions & Help">
-    <meta property="og:description" content="Frequently Asked Questions about Emoji to Image Converter. Learn how to download transparent PNG emojis, usage rights, and image sizes.">
+    <meta property="og:url" content="https://emojitoimage.com/changelog.html">
+    <meta property="og:title" content="Changelog - Emoji to Image Converter | Updates & New Features">
+    <meta property="og:description" content="Track all the improvements, new features, and bug fixes we've made to enhance your Emoji to Image experience.">
     <meta property="og:image" content="https://emojitoimage.com/assets/EmojiMart-Social.jpg">
     <meta property="og:site_name" content="EmojiToImage.com">
     <meta property="og:locale" content="en_US">
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://emojitoimage.com/faq.html">
-    <meta property="twitter:title" content="FAQ - Emoji to Image Converter | Common Questions & Help">
-    <meta property="twitter:description" content="Frequently Asked Questions about Emoji to Image Converter. Learn how to download transparent PNG emojis, usage rights, and image sizes.">
-    <meta property="twitter:image" content="https://emojitoimage.com/assets/EmojiMart-Social.jpg">
-    <meta name="twitter:site" content="@emojitoimage">
-    <meta name="twitter:creator" content="@emojitoimage">
-    
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is EmojiToImage.com?","acceptedAnswer":{"@type":"Answer","text":"EmojiToImage.com is a free online tool that allows you to search for emojis and download them as high-quality PNG images in multiple sizes (up to 512x512). It's perfect for projects, presentations, social media, and any digital content."}},{"@type":"Question","name":"How do I use EmojiToImage?","acceptedAnswer":{"@type":"Answer","text":"Simply search for an emoji using keywords, select the emoji you want, choose your preferred size (64px, 128px, 256px, or 512px), and click download. The image will be saved as a transparent PNG."}},{"@type":"Question","name":"Are the emoji images free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, the converted images are free to use. However, the emoji designs themselves may be subject to copyright by their respective vendors (Apple, Google, etc.). We recommend checking specific usage rights for commercial projects."}},{"@type":"Question","name":"What image formats are available?","acceptedAnswer":{"@type":"Answer","text":"Currently, we provide high-quality PNG images with transparent backgrounds. This format is ideal for web design, app development, and graphic design integration."}},{"@type":"Question","name":"Why do some emojis look different on my device?","acceptedAnswer":{"@type":"Answer","text":"Emojis are rendered by your operating system's font. However, our tool generates images based on a standardized set so you get exactly what you see on the screen when you download it, regardless of your device."}}]}</script>
+    <meta property="twitter:url" content="https://emojitoimage.com/changelog.html">
+    <meta property="twitter:title" content="Changelog - Emoji to Image Converter | Updates & New Features">
+    <meta property="twitter:description" content="Track all the improvements, new features, and bug fixes we've made to enhance your Emoji to Image experience.">
   
 
     
@@ -89,14 +80,175 @@
   display: block !important;
 }
 
-.faq-page-section {
-  background-color: #fff;
+.changelog-page-section {
+  background-color: #f9fafb;
   width: 100%;
+  min-height: calc(100vh - 80px);
+  padding-bottom: 4rem;
 }
 
-.faq-container {
-  padding-top: 4rem;
-  padding-bottom: 6rem;
+.changelog-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.changelog-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.changelog-header-icon {
+  color: #fff;
+  background: linear-gradient(135deg, #d946ef, #8b5cf6);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  box-shadow: 0 10px 15px -3px #8b5cf64d;
+}
+
+.changelog-header h1 {
+  background: linear-gradient(to right, #d946ef, #8b5cf6);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.changelog-header p {
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.changelog-timeline {
+  flex-direction: column;
+  gap: 2rem;
+  display: flex;
+}
+
+.changelog-card {
+  background: #fff;
+  border: 1px solid #f3f4f6;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 6px -1px #0000000d, 0 2px 4px -1px #00000008;
+}
+
+.changelog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px #0000000d, 0 4px 6px -2px #00000008;
+}
+
+.card-header {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+
+.version-icon {
+  color: #fff;
+  background-color: #10b981;
+  border-radius: 12px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  display: flex;
+}
+
+.version-meta {
+  flex-grow: 1;
+}
+
+.version-number {
+  color: #111827;
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.version-date {
+  color: #6b7280;
+  align-items: center;
+  gap: .5rem;
+  font-size: .875rem;
+  display: flex;
+}
+
+.version-badge {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  border-radius: 9999px;
+  padding: .25rem .75rem;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.version-badge.feature {
+  color: #059669;
+  background-color: #d1fae5;
+}
+
+.release-title {
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  padding-left: 64px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.changelog-list {
+  padding-left: 64px;
+  list-style: none;
+}
+
+.changelog-list li {
+  color: #4b5563;
+  align-items: flex-start;
+  margin-bottom: .75rem;
+  line-height: 1.6;
+  display: flex;
+}
+
+.list-icon {
+  margin-right: .75rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+@media (width <= 640px) {
+  .changelog-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .version-icon {
+    margin-bottom: .5rem;
+  }
+
+  .release-title, .changelog-list {
+    padding-left: 0;
+  }
 }
 
 </style>
@@ -150,73 +302,75 @@
           <!-- Emoji picker section -->
           <div class="picker-section">
             
-    <div class="faq-page-section">
-      <div class="faq-container">
-        <div class="faq-header">
-          <h1>Frequently Asked Questions</h1>
-          <p>Find answers to common questions about using EmojiToImage.com and make the most of our free emoji tools.</p>
+    <div class="changelog-page-section">
+      <div class="changelog-container">
+        <!-- Header -->
+        <div class="changelog-header">
+          <div class="changelog-header-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h1>Changelog</h1>
+          <p>Track all the improvements, new features, and bug fixes we've made to enhance your Emoji to Image experience.</p>
         </div>
 
-        <div class="faq-list" id="faq-list">
-          <details class="faq-item">
-            <summary class="faq-question">
-              What is EmojiToImage.com?
-              <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              <p>EmojiToImage.com is a free online tool that allows you to search for emojis and download them as high-quality PNG images in multiple sizes. It's perfect for projects, presentations, social media, and any other digital content where you need emoji images.</p>
+        <!-- Timeline -->
+        <div class="changelog-timeline">
+          
+          <!-- v1.0.0 -->
+          <div class="changelog-card">
+            <div class="card-header">
+              <div class="version-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </div>
+              <div class="version-meta">
+                <div class="version-number">v1.0.0</div>
+                <div class="version-date">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  2025-12-14
+                </div>
+              </div>
+              <span class="version-badge feature">FEATURE</span>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              How do I use EmojiToImage?
-              <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              <p>Simply search for an emoji using keywords in the search bar, select the emoji you want from the results, choose your preferred size (64px, 128px, 256px, or 512px), and click the download button. The image will be saved to your device as a transparent PNG.</p>
-            </div>
-          </details>
+            <h2 class="release-title">Comprehensive Site Optimization & Layout Enhancements</h2>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              Are the emoji images free to use?
-              <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              <p>Yes, the converted images are free to use for personal and commercial projects. However, please note that the emoji designs themselves (the artistic rendering) may be subject to copyright by their respective vendors (Apple, Google, Twitter, etc.). We recommend checking the specific usage rights if you plan to use them in a major commercial project.</p>
-            </div>
-          </details>
+            <ul class="changelog-list">
+              <li>
+                <span class="list-icon">🚀</span>
+                <span><strong>SEO Optimization:</strong> Improved metadata, titles, and H2 tags for Index, Copy & Paste, and Other Tools pages to enhance search visibility.</span>
+              </li>
+              <li>
+                <span class="list-icon">✨</span>
+                <span><strong>Layout Improvements:</strong> Refined FAQ page layout to match Other Tools design, removing redundant sections and ensuring consistent centered alignment.</span>
+              </li>
+              <li>
+                <span class="list-icon">🎨</span>
+                <span><strong>UI Enhancements:</strong> Optimized Intro Section styles with 4-column support and refined container widths for better responsiveness.</span>
+              </li>
+              <li>
+                <span class="list-icon">🆕</span>
+                <span><strong>New Features:</strong> Added "Privacy First" feature to Homepage and "Always Free" highlight to Copy & Paste page.</span>
+              </li>
+              <li>
+                <span class="list-icon">🔄</span>
+                <span><strong>Structure Updates:</strong> Relocated Intro Section to before the footer across key pages for improved user flow and visual hierarchy.</span>
+              </li>
+            </ul>
+          </div>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              What image formats are available?
-              <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              <p>Currently, we provide high-quality PNG images with transparent backgrounds. PNG is the best format for emojis as it supports transparency and maintains high quality without compression artifacts, making it ideal for web design, app development, and graphic design integration.</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              Why do some emojis look different on my device?
-              <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              <p>Emojis are rendered by your operating system's font (e.g., Apple Color Emoji on macOS/iOS, Segoe UI Emoji on Windows). When you use our tool, we generate images based on a standardized set, so you get exactly what you see on the screen when you download it, regardless of which device you are viewing it on.</p>
-            </div>
-          </details>
         </div>
       </div>
     </div>

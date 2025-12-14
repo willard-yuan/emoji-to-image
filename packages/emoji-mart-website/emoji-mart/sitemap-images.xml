@@ -16,11 +16,6 @@
       <image:caption>Multiple size options and instant download features</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://emojitoimage.com/assets/labubu_emoji_1_256x256.png</image:loc>
-      <image:title>Labubu Emoji PNG Sample</image:title>
-      <image:caption>Popular Labubu emoji converted to high-quality PNG format</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://emojitoimage.com/assets/palette.svg</image:loc>
       <image:title>EmojiToImage Logo</image:title>
       <image:caption>Official logo of EmojiToImage.com</image:caption>
@@ -29,6 +24,61 @@
       <image:loc>https://emojitoimage.com/assets/EmojiMart-Social.jpg</image:loc>
       <image:title>EmojiToImage Social Media Preview</image:title>
       <image:caption>Social media preview image for EmojiToImage converter</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_1.png</image:loc>
+      <image:title>Labubu Emoji 1</image:title>
+      <image:caption>Labubu emoji variant 1 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_2.png</image:loc>
+      <image:title>Labubu Emoji 2</image:title>
+      <image:caption>Labubu emoji variant 2 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_3.png</image:loc>
+      <image:title>Labubu Emoji 3</image:title>
+      <image:caption>Labubu emoji variant 3 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_4.png</image:loc>
+      <image:title>Labubu Emoji 4</image:title>
+      <image:caption>Labubu emoji variant 4 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_5.png</image:loc>
+      <image:title>Labubu Emoji 5</image:title>
+      <image:caption>Labubu emoji variant 5 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_6.png</image:loc>
+      <image:title>Labubu Emoji 6</image:title>
+      <image:caption>Labubu emoji variant 6 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_7.png</image:loc>
+      <image:title>Labubu Emoji 7</image:title>
+      <image:caption>Labubu emoji variant 7 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_8.png</image:loc>
+      <image:title>Labubu Emoji 8</image:title>
+      <image:caption>Labubu emoji variant 8 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_9.png</image:loc>
+      <image:title>Labubu Emoji 9</image:title>
+      <image:caption>Labubu emoji variant 9 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_10.png</image:loc>
+      <image:title>Labubu Emoji 10</image:title>
+      <image:caption>Labubu emoji variant 10 converted to PNG</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://emojitoimage.com/assets/labubu_emoji_11.png</image:loc>
+      <image:title>Labubu Emoji 11</image:title>
+      <image:caption>Labubu emoji variant 11 converted to PNG</image:caption>
     </image:image>
   </url>
   
